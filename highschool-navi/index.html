@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="robots" content="noindex, nofollow">
+<title>聖蹟桜ヶ丘 高校受験ナビ</title>
+<style>
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #2563eb;
+  --primary-bg: #eff6ff;
+  --primary-border: #bfdbfe;
+  --accent: #f59e0b;
+  --star-color: #f59e0b;
+  --toritsu-color: #1d4ed8;
+  --toritsu-bg: #dbeafe;
+  --shiritsu-color: #be185d;
+  --shiritsu-bg: #fce7f3;
+  --bg-main: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-sub: #475569;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Yu Gothic", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 2rem;
+}
+
+/* Top Hero Header */
+header.hero-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0284c7 100%);
+  color: #ffffff;
+  padding: 1.5rem 1rem 1.25rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1.hero-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  header.hero-header {
+    padding: 2.25rem 1.5rem 1.75rem;
+  }
+  h1.hero-title {
+    font-size: 2rem;
+  }
+}
+
+p.hero-subtitle {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  max-width: 840px;
+}
+
+.kid-friendly-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(254, 240, 138, 0.2);
+  border: 1px solid rgba(253, 224, 71, 0.4);
+  color: #fef08a;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+}
+
+/* Sticky Tab Navigation */
+.nav-tab-container {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.nav-tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 0.5rem;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.85rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.tab-btn:hover {
+  color: var(--primary-light);
+}
+
+.tab-btn.active {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary-light);
+}
+
+.tab-badge {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: var(--text-sub);
+}
+
+.tab-btn.active .tab-badge {
+  background: var(--primary-bg);
+  color: var(--primary-light);
+  font-weight: 800;
+}
+
+/* Main Content Wrapper */
+main.main-content {
+  max-width: 1200px;
+  margin: 0.85rem auto;
+  padding: 0 0.75rem;
+}
+
+@media (min-width: 768px) {
+  main.main-content {
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Mobile Filter Box */
+.filter-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 0.85rem 1rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .filter-card {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.filter-search-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.65rem 0.9rem 0.65rem 2.25rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Filter Toggle Button */
+.toggle-filter-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toggle-filter-btn:active {
+  background: #e2e8f0;
+}
+
+.active-filter-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: none;
+}
+
+.active-filter-dot.show {
+  display: inline-block;
+}
+
+/* Quick Filter Chips */
+.quick-chips-wrap {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-width: none;
+}
+.quick-chips-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.chip-btn {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.chip-btn:active {
+  transform: scale(0.96);
+}
+
+.chip-btn.active {
+  background: var(--primary-light);
+  color: #ffffff;
+  border-color: var(--primary-light);
+  font-weight: 700;
+}
+
+/* Collapsible Filter Body */
+.filter-expandable {
+  display: none;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.65rem;
+}
+
+.filter-expandable.open {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .filter-expandable {
+    display: block !important;
+  }
+  .toggle-filter-btn {
+    display: none;
+  }
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-val-badge {
+  color: var(--primary-light);
+  font-weight: 800;
+}
+
+.range-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.range-slider {
+  width: 100%;
+  height: 6px;
+  accent-color: var(--primary-light);
+  cursor: pointer;
+}
+
+.range-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.select-ctrl {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-group-segmented {
+  display: flex;
+  background: #f1f5f9;
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  gap: 0.2rem;
+}
+
+.seg-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.45rem 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.seg-btn.active {
+  background: #ffffff;
+  color: var(--text-main);
+  font-weight: 800;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.filter-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+}
+
+.reset-btn {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* View Mode Bar */
+.view-mode-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.results-count {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.highlight-num {
+  color: var(--primary-light);
+  font-size: 1.2rem;
+}
+
+.view-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mode-toggle-group {
+  display: flex;
+  background: #f1f5f9;
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  gap: 0.2rem;
+}
+
+.mode-btn {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.mode-btn.active {
+  background: #ffffff;
+  color: var(--primary-light);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+/* ==========================================================
+   MOBILE CARD VIEW
+   ========================================================== */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.school-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.school-card:active {
+  transform: scale(0.99);
+  background: #fafafa;
+}
+
+.school-card:hover {
+  border-color: #93c5fd;
+  box-shadow: var(--shadow-md);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.type-pill {
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.pill-toritsu {
+  background: var(--toritsu-bg);
+  color: var(--toritsu-color);
+  border: 1px solid #bfdbfe;
+}
+
+.pill-shiritsu {
+  background: var(--shiritsu-bg);
+  color: var(--shiritsu-color);
+  border: 1px solid #fbcfe8;
+}
+
+.pill-category {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: #f1f5f9;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  margin-left: auto;
+  line-height: 1;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.star-btn:active {
+  transform: scale(1.3);
+}
+.star-btn.starred {
+  color: var(--star-color);
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-school-name {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.card-dev-badge {
+  flex-shrink: 0;
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.45rem;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.dev-75plus { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.dev-70plus { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+.dev-65plus { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+.dev-60plus { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.dev-50plus { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+.dev-sub50  { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+
+.card-meta-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+  background: #f8fafc;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.card-chip-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+}
+
+.chip-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.card-commute-highlight {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.time-superfast { color: #059669; }
+.time-fast { color: #0284c7; }
+.time-normal { color: #d97706; }
+.time-long { color: #64748b; }
+
+.card-station-text {
+  color: var(--text-sub);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-features-snippet {
+  font-size: 0.82rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card-naishin-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  margin-bottom: 0.55rem;
+}
+
+.card-naishin-row strong {
+  color: #b45309;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.tbl-naishin {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.tbl-naishin strong {
+  color: #b45309;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.naishin-block {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.naishin-block h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 0.45rem;
+}
+
+.nb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.nb-cell {
+  background: #fff;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.nb-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #78716c;
+}
+
+.nb-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #b45309;
+  line-height: 1.25;
+}
+
+.nb-sub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #78716c;
+}
+
+.nb-note {
+  font-size: 0.74rem;
+  color: #57534e;
+  line-height: 1.55;
+  margin-top: 0.5rem;
+}
+
+.card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.78rem;
+}
+
+.exam-badge {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #9333ea;
+  border: 1px solid #f0abfc;
+  font-size: 0.72rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  max-width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-detail-hint {
+  color: var(--primary-light);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+/* ==========================================================
+   DESKTOP TABLE VIEW
+   ========================================================== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2.5rem;
+  display: none;
+}
+
+table.schools-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+table.schools-table th {
+  background: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 0.8rem 0.9rem;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+}
+
+table.schools-table td {
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+table.schools-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Quick Access / Section Guides */
+.guide-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+  .guide-section {
+    padding: 2rem;
+  }
+}
+
+.guide-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .guide-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.guide-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+}
+
+.guide-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.guide-card p, .guide-card ul {
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.guide-card ul {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.guide-card li {
+  margin-bottom: 0.35rem;
+}
+
+/* Commute Time Matrix */
+.matrix-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .matrix-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.matrix-box {
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.matrix-header {
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.matrix-box.tier-1 .matrix-header { border-color: #10b981; color: #047857; }
+.matrix-box.tier-2 .matrix-header { border-color: #0284c7; color: #0369a1; }
+.matrix-box.tier-3 .matrix-header { border-color: #f59e0b; color: #b45309; }
+.matrix-box.tier-4 .matrix-header { border-color: #8b5cf6; color: #6d28d9; }
+
+.matrix-list {
+  list-style: none;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.matrix-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #f1f5f9;
+  padding-bottom: 0.25rem;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.matrix-list li span {
+  white-space: nowrap;
+  color: var(--text-sub);
+}
+
+/* Score Calculator Tool */
+.calc-card {
+  background: linear-gradient(145deg, #eff6ff 0%, #f8fafc 100%);
+  border: 1.5px solid #bfdbfe;
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+}
+
+@media (min-width: 640px) {
+  .calc-grid {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.calc-input-box {
+  width: 75px;
+  padding: 0.45rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.calc-result-box {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  border: 1px solid #bfdbfe;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.calc-result-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-light);
+  line-height: 1.2;
+}
+
+/* Mobile Bottom-Sheet Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 1rem;
+  }
+}
+
+.modal-content {
+  background: var(--surface);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  border-radius: 1.25rem 1.25rem 0 0;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  padding: 1.25rem 1.15rem;
+  position: relative;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .modal-content {
+    border-radius: 1.25rem;
+    padding: 2rem;
+    animation: fadeIn 0.2s ease;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-drag-bar {
+  width: 40px;
+  height: 4px;
+  background: #cbd5e1;
+  border-radius: 9999px;
+  margin: -0.4rem auto 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .modal-drag-bar {
+    display: none;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background: #f1f5f9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+footer.page-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="hero-header">
+  <div class="header-container">
+    <div class="badge-tag">
+      <span>🎓</span> 聖蹟桜ヶ丘から通える高校 受験ガイド
+    </div>
+    <h1 class="hero-title">東京都 高校受験 ＆ 通学シミュレーター</h1>
+    <p class="hero-subtitle">
+      聖蹟桜ヶ丘駅（京王線特急）から通える都立普通科76校 ＆ 主要私立57校を完全収録。<br>
+      通学時間・偏差値・特色で瞬時に比較でき、気になった学校はお気に入り（⭐）に保存できます。
+    </p>
+    <div class="kid-friendly-hint">
+      <span>💡</span> 学校カードをタップすると、聖蹟桜ヶ丘からの詳しい行き方や入試情報が見られます！
+    </div>
+  </div>
+</header>
+
+<!-- Sticky Tab Switcher -->
+<div class="nav-tab-container">
+  <div class="nav-tabs" id="tab-nav">
+    <button class="tab-btn active" onclick="switchMainTab('all', this)">
+      全校統合 <span class="tab-badge" id="tab-count-all">133</span>
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('toritsu', this)">
+      都立普通科 <span class="tab-badge" id="tab-count-toritsu">76</span>
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('shiritsu', this)">
+      私立高校 <span class="tab-badge" id="tab-count-shiritsu">57</span>
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('starred', this)">
+      ⭐ 気になるリスト <span class="tab-badge" id="tab-count-starred" style="background: #fef3c7; color: #b45309; font-weight: 800;">0</span>
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('matrix', this)">
+      ⏱️ 通学マップ
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('guide', this)">
+      📖 受験ガイド・内申計算
+    </button>
+  </div>
+</div>
+
+<main class="main-content">
+
+  <!-- Interactive Filter Box -->
+  <section class="filter-card" id="filter-section">
+    <!-- Top Search Row -->
+    <div class="filter-search-row">
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="filter-keyword" class="search-input" placeholder="学校名・駅名・キーワード（自校作成、早慶、推薦等）..." oninput="applyFilters()">
+      </div>
+      <button class="toggle-filter-btn" onclick="toggleFilterDrawer()">
+        <span>⚙️ 条件絞り込み</span>
+        <span class="active-filter-dot" id="filter-dot"></span>
+      </button>
+    </div>
+
+    <!-- Quick Chips (One-Tap on Mobile) -->
+    <div class="quick-chips-wrap">
+      <button class="chip-btn" data-quick="time-25" onclick="toggleQuickChip('time-25', this)">⚡ 25分以内</button>
+      <button class="chip-btn" data-quick="time-35" onclick="toggleQuickChip('time-35', this)">🚆 35分以内</button>
+      <button class="chip-btn" data-quick="dev-70" onclick="toggleQuickChip('dev-70', this)">🔥 偏差値70+</button>
+      <button class="chip-btn" data-quick="dev-65" onclick="toggleQuickChip('dev-65', this)">🌟 偏差値65+</button>
+      <button class="chip-btn" data-quick="cat-fuzoku" onclick="toggleQuickChip('cat-fuzoku', this)">🏛️ 大学付属校</button>
+      <button class="chip-btn" data-quick="cat-jukuten" onclick="toggleQuickChip('cat-jukuten', this)">🎯 都立重点校</button>
+    </div>
+
+    <!-- Collapsible Advanced Filter Body -->
+    <div class="filter-expandable" id="filter-expandable">
+      <div class="filter-grid">
+        <!-- Commute Time Slider -->
+        <div class="filter-group">
+          <label class="filter-label">
+            聖蹟桜ヶ丘からの通学時間
+            <span class="filter-val-badge" id="val-commute">全範囲（上限なし）</span>
+          </label>
+          <div class="range-wrap">
+            <input type="range" id="filter-commute" class="range-slider" min="15" max="75" step="5" value="75" oninput="updateCommuteLabel(); applyFilters();">
+            <div class="range-scale">
+              <span>15分</span>
+              <span>25分</span>
+              <span>35分</span>
+              <span>50分</span>
+              <span>75分+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deviation Slider -->
+        <div class="filter-group">
+          <label class="filter-label">
+            下限偏差値
+            <span class="filter-val-badge" id="val-deviation">偏差値 40以上</span>
+          </label>
+          <div class="range-wrap">
+            <input type="range" id="filter-deviation" class="range-slider" min="40" max="75" step="1" value="40" oninput="updateDeviationLabel(); applyFilters();">
+            <div class="range-scale">
+              <span>40</span>
+              <span>50</span>
+              <span>60</span>
+              <span>70</span>
+              <span>75+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender Filter -->
+        <div class="filter-group">
+          <label class="filter-label">共学・別学区分</label>
+          <div class="btn-group-segmented">
+            <button class="seg-btn active" data-gender="all" onclick="setGenderFilter('all', this)">すべて</button>
+            <button class="seg-btn" data-gender="共学" onclick="setGenderFilter('共学', this)">共学</button>
+            <button class="seg-btn" data-gender="男子校" onclick="setGenderFilter('男子校', this)">男子校</button>
+            <button class="seg-btn" data-gender="女子校" onclick="setGenderFilter('女子校', this)">女子校</button>
+          </div>
+        </div>
+
+        <!-- Area Select -->
+        <div class="filter-group">
+          <label class="filter-label">地域・エリア</label>
+          <select id="filter-area" class="select-ctrl" onchange="applyFilters()">
+            <option value="all">すべての地域</option>
+            <option value="多摩南部">多摩南部（多摩・日野・府中・調布・町田・狛江）</option>
+            <option value="多摩北部">多摩北部（国立・立川・国分寺・小金井・武蔵野など）</option>
+            <option value="多摩西部">多摩西部（八王子・昭島・青梅・福生など）</option>
+            <option value="23区西部">23区西部（杉並・世田谷・中野・練馬・目黒など）</option>
+            <option value="都心">都心（千代田・港・新宿・文京・渋谷・豊島など）</option>
+            <option value="23区南部">23区南部（品川・大田など）</option>
+            <option value="23区東部">23区東部（江東・墨田・江戸川など）</option>
+            <option value="23区北部">23区北部（板橋・北・足立など）</option>
+            <option value="神奈川">神奈川県（川崎麻生・横浜青葉・相模原など）</option>
+          </select>
+        </div>
+
+        <!-- Category Select -->
+        <div class="filter-group">
+          <label class="filter-label">学校区分・重点校指定</label>
+          <select id="filter-category" class="select-ctrl" onchange="applyFilters()">
+            <option value="all">すべての学校区分</option>
+            <optgroup label="都立高校 特色指定">
+              <option value="進学指導重点校">進学指導重点校（国立・西・日比谷・立川など）</option>
+              <option value="進学指導特別推進校">進学指導特別推進校（新宿・国分寺・駒場など）</option>
+              <option value="進学指導推進校">進学指導推進校（調布北・小金井北・日野台など）</option>
+              <option value="単位制普通科">単位制普通科</option>
+              <option value="一般普通科">一般普通科</option>
+            </optgroup>
+            <optgroup label="私立高校 特色指定">
+              <option value="早慶・難関付属">早慶・難関大学付属校（早実・慶女・学院など）</option>
+              <option value="GMARCH付属">GMARCH付属校（明大明治・中大附属・法政など）</option>
+              <option value="大学付属・進学">大学付属・系列進学校（日大・成蹊・成城など）</option>
+              <option value="超難関進学校">超難関進学校（開成など）</option>
+              <option value="難関進学校">難関進学校（巣鴨・城北・桐朋・ICU・錦城など）</option>
+              <option value="中堅進学校">中堅上位進学校（朋優・青稜・淑徳・明星など）</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-footer-actions">
+        <button class="reset-btn" onclick="resetFilters()">🔄 条件をリセット</button>
+        <button class="toggle-filter-btn" style="background: var(--primary-light); color:#fff; border:none;" onclick="toggleFilterDrawer()">閉じる ✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- List Section -->
+  <div id="view-list-section">
+    <!-- View Switcher & Stats Bar -->
+    <div class="view-mode-bar">
+      <div class="results-count">
+        該当: <span class="highlight-num" id="visible-count">0</span> 校
+      </div>
+
+      <div class="view-controls-right">
+        <!-- Sort Select -->
+        <select id="sort-select" class="select-ctrl" style="width: auto; padding: 0.4rem 0.6rem; font-size: 0.8rem;" onchange="applySorting()">
+          <option value="dev-desc">偏差値が高い順</option>
+          <option value="dev-asc">偏差値が低い順</option>
+          <option value="time-asc">聖蹟桜ヶ丘から近い順</option>
+          <option value="time-desc">聖蹟桜ヶ丘から遠い順</option>
+          <option value="name-asc">学校名順</option>
+        </select>
+
+        <!-- Mode Toggle (Card vs Table) -->
+        <div class="mode-toggle-group">
+          <button class="mode-btn active" id="btn-mode-card" onclick="setViewMode('card')">📱 カード</button>
+          <button class="mode-btn" id="btn-mode-table" onclick="setViewMode('table')">📄 表</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards Container (Mobile Friendly) -->
+    <div class="cards-container" id="schools-cards">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Table Container (Desktop Friendly) -->
+    <div class="table-responsive" id="schools-table-wrap">
+      <table class="schools-table" id="schools-table">
+        <thead>
+          <tr>
+            <th style="width: 35px; text-align: center;">☆</th>
+            <th style="width: 40px; text-align: center;">#</th>
+            <th onclick="toggleSort('name')">高校名 / 設置区分 ↕</th>
+            <th style="min-width: 85px; text-align: center;" onclick="toggleSort('dev')">偏差値 ↕</th>
+            <th style="min-width: 110px;">内申目安<br><span style="font-size: 0.7rem; font-weight: 600;">9教科合計 / 45</span></th>
+            <th style="min-width: 130px;" onclick="toggleSort('time')">聖蹟桜ヶ丘から ↕</th>
+            <th style="min-width: 170px;">最寄り駅・徒歩</th>
+            <th style="min-width: 280px;">特色・校風・進学実績・入試形態</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Commute Time Matrix Section -->
+  <section class="guide-section" id="view-matrix-section" style="display: none;">
+    <h2 class="guide-title">
+      <span>⏱️</span> 聖蹟桜ヶ丘駅からの通学時間帯別 高校マップ
+    </h2>
+    <p style="font-size: 0.86rem; color: #475569; margin-bottom: 1.25rem;">
+      聖蹟桜ヶ丘駅（京王線特急）からの実質ドア・トゥ・スクール（改札〜校門）の所要時間別に整理したターゲット校一覧です。
+    </p>
+
+    <div class="matrix-container" id="matrix-container">
+      <!-- Populated by JS from the school data -->
+    </div>
+  </section>
+
+  <!-- High School Admissions Guidance Section -->
+  <section class="guide-section" id="view-guide-section" style="display: none;">
+    <h2 class="guide-title">
+      <span>📖</span> 東京都の高校受験 仕組みと必勝ガイド
+    </h2>
+
+    <!-- Score Calculator Widget -->
+    <div class="calc-card">
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">
+        🧮 都立高校「換算内申」自動計算ツール
+      </h3>
+      <p style="font-size: 0.82rem; color: var(--text-sub); margin-bottom: 1rem;">
+        都立一般の内申点は、5教科（そのまま加算：各5点×5＝25点）＋実技4教科（2倍換算：各5点×4×2＝40点）の<strong>計65点満点</strong>です。
+      </p>
+
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="calc-row">
+            <span style="font-size: 0.86rem; font-weight: 700;">主要5科合計（25点満点）:</span>
+            <input type="number" id="calc-5" class="calc-input-box" min="5" max="25" value="23" oninput="calculateNaishin()">
+          </div>
+          <div class="calc-row">
+            <span style="font-size: 0.86rem; font-weight: 700;">実技4科合計（20点満点）:</span>
+            <input type="number" id="calc-4" class="calc-input-box" min="4" max="20" value="18" oninput="calculateNaishin()">
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.15rem;">換算内申（65点満点）</div>
+          <div class="calc-result-num" id="calc-result-naishin">59 <span style="font-size: 1rem; color: #64748b;">/ 65点</span></div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #0284c7; margin-top: 0.25rem;" id="calc-result-converted">入試換算点: 272点 / 300点満点</div>
+          <div style="font-size: 0.78rem; color: #475569; margin-top: 0.35rem; line-height: 1.6;" id="calc-target-advice"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guidance Detail Cards -->
+    <div class="guide-grid">
+      <!-- Deviation Population Card -->
+      <div class="guide-card" style="border: 2px solid #3b82f6; background: #fff;">
+        <h3 style="color: #1e3a8a; font-size: 1.15rem;">
+          📊 必読：高校受験における「偏差値の母集団」のカラクリ
+        </h3>
+        <p style="font-size: 0.86rem; color: #334155; line-height: 1.6; margin-bottom: 0.75rem;">
+          <strong>本ツールの偏差値は、都立高校・私立高校ともに「都内一般中学生全体を母集団とする標準模試（Vもぎ・Wもぎ基準）」の同一スケールに統一しています。</strong><br>
+          都内の中学3年生全体を母集団とした正規分布で横並び比較できるように換算しています。
+        </p>
+        <div style="background: #eff6ff; border-radius: 0.5rem; padding: 0.75rem; border: 1px solid #bfdbfe; margin-bottom: 0.75rem;">
+          <h4 style="font-size: 0.86rem; font-weight: 800; color: #1e40af; margin-bottom: 0.25rem;">⚠️ 大手進学塾（早稲田アカデミー・SAPIX等）の「駿台模試」との違い</h4>
+          <p style="font-size: 0.82rem; color: #1e293b; line-height: 1.55;">
+            難関私立を目指す塾では<strong>「駿台学力テスト」</strong>が使われます。<br>
+            駿台模試は上位数％の精鋭のみが集まるため、<strong>本ツールの偏差値（Vもぎ基準）よりも10〜15程度低く出ます</strong>。<br>
+            「塾で早慶は64と言われたのに、この表では75になっている」というのは母集団が異なるためです。
+          </p>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left; background: #fff;">
+            <thead>
+              <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+                <th style="padding: 0.5rem 0.6rem;">高校名</th>
+                <th style="padding: 0.5rem 0.6rem; text-align: center; color: #2563eb;">本ツール (Vもぎ基準)</th>
+                <th style="padding: 0.5rem 0.6rem; text-align: center; color: #dc2626;">駿台模試基準</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">開成高校 (私立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">77</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">67</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">早稲田実業 (私立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">75</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">64</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">日比谷・国立 (都立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">74</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">60〜62</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">明大付属明治 (私立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">72</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">59</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">中央大学附属 (私立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">70</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">57</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">新宿・国分寺 (都立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">68〜69</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">54〜55</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.5rem 0.6rem; font-weight: 700;">日野台・調布北 (都立)</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #2563eb;">63〜64</td>
+                <td style="padding: 0.5rem 0.6rem; text-align: center; font-weight: 900; color: #dc2626;">47〜48</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <h3>🏛️ 都立高校入試の重要ルール</h3>
+        <ul>
+          <li><strong>選抜比率は「学力検査7: 内申点3」</strong>：学力検査（5教科500点満点を700点換算）＋換算内申（65点満点を300点換算）＝計1000点満点。</li>
+          <li><strong>自校作成問題の存在</strong>：日比谷、国立、立川、西、戸山、八王子東、青山（重点校7校）および新宿、国分寺、駒場などは、国数英で各校独自のハイレベル難問が出題。</li>
+          <li><strong>ESAT-J（英語スピーキング）</strong>：11月実施の評価（20点満点）が1000点に加算され、計1020点満点で合否判定。</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h3>🏫 私立高校入試の重要ルール</h3>
+        <ul>
+          <li><strong>併願優遇制度（東京特有）</strong>：都立第一志望者が中3の内申点を基準に事前に合格枠を確保できる制度。</li>
+          <li><strong>オープン一般入試</strong>：早慶付属や開成などは優遇がなく、当日の学力試験（3科・5科）の実力勝負。</li>
+          <li><strong>コース制の違いに注意</strong>：特進コースと進学コースで偏差値が5〜10異なるため、志望コースの基準確認が必須。</li>
+          <li><strong>高校募集停止の動向</strong>：中高一貫校の完全一貫化（豊島岡、本郷、武蔵など）により高校募集なしの学校に注意。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Mobile Bottom-Sheet Modal -->
+<div class="modal-overlay" id="school-modal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-drag-bar"></div>
+    <button class="modal-close-btn" onclick="closeModalDirect()">×</button>
+    <div id="modal-body">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <p style="font-weight: 700; color: #f8fafc; font-size: 0.92rem; margin-bottom: 0.35rem;">
+      聖蹟桜ヶ丘から通える！都立・私立高校受験ナビ
+    </p>
+    <p>
+      ※偏差値は大手進学模試（Vもぎ・Wもぎ等）の合格可能性60〜80%目安です。<br>
+      ※所要時間は平日朝の聖蹟桜ヶ丘駅改札から校門までの目安です。<br>
+      ※都立の内申目安は市進「高校受験ナビ」の合格のめやす（推薦: 2026年春入試用、一般: 2027年春入試用）。私立は併願優遇の基準が学校・年度ごとに違うため載せていません。
+    </p>
+  </div>
+</footer>
+
+<script>
+// Master Data
+const toritsuSchools = [{"id": "t-kunitachi", "name": "都立 国立高等学校", "short_name": "国立", "type": "toritsu", "gender": "共学", "deviation": 74, "deviation_range": "72-74", "area": "多摩南部", "category": "進学指導重点校", "station": "JR南武線 谷保駅 徒歩5分 / JR中央線 国立駅 徒歩20分(バス10分)", "commute_time": 15, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線4分)→ 谷保駅 ＋徒歩5分 ［計約15分］ ※聖蹟桜ヶ丘駅北口から国立駅南口行バス(約25分)も利用可", "features": "都立トップ3「日比谷・西・国立」の一角。東大・京大・東工大・一橋をはじめとする最難関国公立大学へ多数の合格者を輩出。来場者1万人を超える伝説の文化祭「国高祭」など行事・部活動にも全力を尽くす「文武両道」の校風。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/kunitachi-h/", "naishin": {"kansan80": 61, "sonai80": 42, "suisen80": null, "suisen60": 45}}, {"id": "t-tachikawa", "name": "都立 立川高等学校", "short_name": "立川", "type": "toritsu", "gender": "共学", "deviation": 71, "deviation_range": "70-71", "area": "多摩北部", "category": "進学指導重点校", "station": "JR中央線・青梅線・南武線 立川駅 徒歩8分 / 多摩都市モノレール 立川南駅 徒歩6分", "commute_time": 25, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線11分)→ 立川駅 ＋徒歩8分 ［計約25分］", "features": "多摩地区屈指の伝統進学校。普通科のほか「創造理数科」を併設しSSH（スーパーサイエンスハイスクール）に指定。難関国公立大学現役合格率が極めて高い。単位制を生かした柔軟な進路指導と自主自律の校風。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般（創造理数科は独自選抜）", "url": "https://www.metro.ed.jp/tachikawa-h/", "naishin": {"kansan80": 60, "sonai80": 42, "suisen80": null, "suisen60": 44}}, {"id": "t-hachiojihigashi", "name": "都立 八王子東高等学校", "short_name": "八王子東", "type": "toritsu", "gender": "共学", "deviation": 71, "deviation_range": "70-71", "area": "多摩西部", "category": "進学指導重点校", "station": "JR中央線・京王高尾線 高尾駅 北口バス8分(「高尾警察署前」徒歩3分) または徒歩25分", "commute_time": 35, "commute_route": "聖蹟桜ヶ丘 →(京王線特急22分)→ 高尾駅 ＋北口バス8分・徒歩3分 ［計約35分］", "features": "多摩南西部を代表する進学指導重点校。生徒一人ひとりの学習管理ときめ細やかな補習・講習体制に定評があり、東大をはじめ難関国公立大学への高い現役進学実績を誇る。緑豊かな落ち着いた学習環境。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/hachiojihigashi-h/", "naishin": {"kansan80": 57, "sonai80": 39, "suisen80": 45, "suisen60": 43}}, {"id": "t-nishi", "name": "都立 西高等学校", "short_name": "西", "type": "toritsu", "gender": "共学", "deviation": 73, "deviation_range": "72-74", "area": "23区西部", "category": "進学指導重点校", "station": "京王井の頭線 久我山駅 徒歩10分 / JR中央線 西荻窪駅 徒歩20分(バス10分)", "commute_time": 35, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(京王井の頭線急行5分)→ 久我山駅 ＋徒歩10分 ［計約35分］", "features": "「文武二道」を掲げる都立最難関の一角。制服がなく自由闊達な校風。毎年30名近い東大合格者や海外大合格者を輩出。自学自習の精神を重んじ、アカデミックな授業と多彩な部活動・学校行事が高水準で両立。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/nishi-h/", "naishin": {"kansan80": 61, "sonai80": 42, "suisen80": null, "suisen60": 45}}, {"id": "t-hibiya", "name": "都立 日比谷高等学校", "short_name": "日比谷", "type": "toritsu", "gender": "共学", "deviation": 74, "deviation_range": "73-75", "area": "都心", "category": "進学指導重点校", "station": "東京メトロ 永田町駅 徒歩3分 / 赤坂見附駅 徒歩8分 / 溜池山王駅 徒歩3分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(メトロ丸ノ内線9分)→ 赤坂見附駅 ＋徒歩8分 ［計約45分］ または市ヶ谷経由有楽町線で永田町駅徒歩3分［計約42分］", "features": "都立高校の頂点に君臨する名門。東大合格者数は公立高校日本一（毎年50〜60名前後）。SSH指定、グローバルリーダー育成、星陵祭などハイレベルな知性と人間性を磨く環境が整う。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/hibiya-h/", "naishin": {"kansan80": 63, "sonai80": 44, "suisen80": null, "suisen60": 45}}, {"id": "t-toyama", "name": "都立 戸山高等学校", "short_name": "戸山", "type": "toritsu", "gender": "共学", "deviation": 72, "deviation_range": "71-72", "area": "都心", "category": "進学指導重点校", "station": "東京メトロ副都心線 西早稲田駅 徒歩1分 / JR山手線・東西線 高田馬場駅 徒歩12分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿三丁目（都営新宿線・副都心線直通/乗換） →(副都心線4分)→ 西早稲田駅 ＋徒歩1分 ［計約40〜43分］", "features": "SSH指定の理数教育推進校。国公立医学部・東大・難関大への高い進学実績を誇る。伝統の「戸山戦（新宿高校との対抗戦）」や部活動も盛ん。自主自立の精神と自由な校風が魅力。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/toyama-h/", "naishin": {"kansan80": 61, "sonai80": 42, "suisen80": null, "suisen60": 45}}, {"id": "t-aoyama", "name": "都立 青山高等学校", "short_name": "青山", "type": "toritsu", "gender": "共学", "deviation": 71, "deviation_range": "70-71", "area": "都心", "category": "進学指導重点校", "station": "東京メトロ銀座線 外苑前駅 徒歩3分 / 都営大江戸線 青山一丁目駅 徒歩10分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行6分)→ 渋谷 →(メトロ銀座線4分)→ 外苑前駅 ＋徒歩3分 ［計約40分］", "features": "都立重点校の中で屈指の人気を誇る。神宮外苑に位置し、名物文化祭「外苑祭」のクラス劇は圧巻。勉強と行事・部活を120%両立させるアクティブな校風。難関国公立・早慶上理への現役合格率が高い。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/aoyama-h/", "naishin": {"kansan80": 62, "sonai80": 43, "suisen80": null, "suisen60": 45}}, {"id": "t-shinjuku", "name": "都立 新宿高等学校", "short_name": "新宿", "type": "toritsu", "gender": "共学", "deviation": 69, "deviation_range": "68-70", "area": "都心", "category": "進学指導特別推進校", "station": "東京メトロ副都心線 新宿三丁目駅 徒歩1分 / JR各線 新宿駅(新南改札) 徒歩4分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿駅 ＋新南改札より徒歩4分 ［計約32分］", "features": "新宿駅・新宿御苑に隣接する最高峰の立地。進学指導特別推進校のトップであり単位制普通科。自校作成問題を導入し重点校に匹敵する入試難易度。伝統の遠泳合宿「館山水泳合宿」や活発な部活動、自主自律の進学校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/shinjuku-h/", "naishin": {"kansan80": 60, "sonai80": 42, "suisen80": null, "suisen60": 45}}, {"id": "t-kokubunji", "name": "都立 国分寺高等学校", "short_name": "国分寺", "type": "toritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-68", "area": "多摩北部", "category": "進学指導特別推進校", "station": "西武国分寺線 恋ヶ窪駅 徒歩10分 / JR中央線・武蔵野線 西国分寺駅 徒歩20分(自転車7分)", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線・武蔵野線10分)→ 西国分寺駅 ＋徒歩20分(または恋ヶ窪駅徒歩10分) ［計約30〜35分］", "features": "多摩地区屈指の人気上位校。「こもれび祭」など生徒主体の熱い行事文化と手厚い大学進学指導が魅力。国公立大学への現役合格率が非常に高く、難関私大への実績も堅調。自校作成（国・数・英）導入校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/kokubunji-h/", "naishin": {"kansan80": 57, "sonai80": 39, "suisen80": 45, "suisen60": 42}}, {"id": "t-komaba", "name": "都立 駒場高等学校", "short_name": "駒場", "type": "toritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-68", "area": "23区西部", "category": "進学指導特別推進校", "station": "京王井の頭線 駒場東大前駅 徒歩7分 / 東急田園都市線 池尻大橋駅 徒歩10分", "commute_time": 35, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停8分)→ 駒場東大前駅 ＋徒歩7分 ［計約35分］", "features": "井の頭線沿線の超人気校。普通科と保健体育科を設置。広大なグラウンドと充実したスポーツ施設を持ち、文武両道を徹底。国公立大学・難関私立大学への進学実績が年々上昇中。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/komaba-h/", "naishin": {"kansan80": 58, "sonai80": 40, "suisen80": 45, "suisen60": 43}}, {"id": "t-koyamadai", "name": "都立 小山台高等学校", "short_name": "小山台", "type": "toritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-68", "area": "23区西部", "category": "進学指導特別推進校", "station": "東急目黒線 武蔵小山駅 徒歩1分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線26分)→ 武蔵小杉 →(東急目黒線9分)→ 武蔵小山駅 ＋徒歩1分 ［計約46分］", "features": "駅改札を出て目の前という抜群の好立地。甲子園出場実績を持つ野球班をはじめ「班活動（部活）」が非常に盛んで、圧倒的な現役進学率を誇る。面倒見の良さと団結力のある校風。自校作成問題校。", "exam_type": "自校作成（国・数・英） / 推薦・一般", "url": "https://www.metro.ed.jp/koyamadai-h/", "naishin": {"kansan80": 58, "sonai80": 40, "suisen80": 44, "suisen60": 43}}, {"id": "t-machida", "name": "都立 町田高等学校", "short_name": "町田", "type": "toritsu", "gender": "共学", "deviation": 66, "deviation_range": "65-66", "area": "多摩南部", "category": "進学指導特別推進校", "station": "JR横浜線・小田急線 町田駅 徒歩12分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘駅より町田駅行バス(または多摩センター経由・橋本乗換横浜線) 町田駅 ＋徒歩12分 ［計約40〜45分］", "features": "町田・相模原エリアの都立トップ進学校。土曜講習や手厚い進路指導により国公立大・早慶上理・GMARCHへの合格実績を大幅に伸ばしている。穏やかで真面目な生徒が多く、部活動も盛ん。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/machida-h/", "naishin": {"kansan80": 54, "sonai80": 37, "suisen80": 43, "suisen60": 40}}, {"id": "t-musashinokita", "name": "都立 武蔵野北高等学校", "short_name": "武蔵野北", "type": "toritsu", "gender": "共学", "deviation": 67, "deviation_range": "66-67", "area": "多摩北部", "category": "進学指導特別推進校", "station": "西武新宿線 東伏見駅 徒歩15分 / JR中央線 三鷹駅・吉祥寺駅 バス10〜15分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺駅 ＋北口バス15分 ［計約48分］", "features": "通称「ムサキタ」。緑豊かで落ち着いた武蔵野の地にあり、進学指導特別推進校として国公立大への現役合格率が非常に高い。活気ある校風と高い学習意欲が共存する人気進学校。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/musashinokita-h/", "naishin": {"kansan80": 56, "sonai80": 39, "suisen80": 44, "suisen60": 42}}, {"id": "t-kokusai", "name": "都立 国際高等学校", "short_name": "国際", "type": "toritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-69", "area": "23区西部", "category": "進学指導特別推進校", "station": "京王井の頭線 駒場東大前駅 徒歩5分", "commute_time": 34, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停8分)→ 駒場東大前駅 ＋徒歩5分 ［計約34分］", "features": "都立唯一の国際学科高校（IB＝国際バカロレアコース併設）。帰国生や留学生が多く、英語教育のレベルは全国屈指。海外名門大学や難関国公立・早慶上智への進学実績が豊富。自由で洗練された校風。英語自校作成問題校。", "exam_type": "自校作成（英語のみ独自問題） / 推薦・一般・IB選抜", "url": "https://www.metro.ed.jp/kokusai-h/", "naishin": {"kansan80": 59, "sonai80": 41, "suisen80": 45, "suisen60": 43}}, {"id": "t-mita", "name": "都立 三田高等学校", "short_name": "三田", "type": "toritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-68", "area": "都心", "category": "進学指導推進校", "station": "都営大江戸線 赤羽橋駅 徒歩5分 / 都営三田線・浅草線 三田駅 徒歩10分 / JR田町駅 徒歩12分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(都営大江戸線13分)→ 赤羽橋駅 ＋徒歩5分 ［計約46分］", "features": "東京タワーの真下に位置する都心の超人気進学校。ユネスコスクール指定。女子を中心に高い倍率が続く。国公立大・早慶上智・GMARCHへの高い現役進学率と、自由で活発な校風が魅力。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/mita-h/", "naishin": {"kansan80": 59, "sonai80": 41, "suisen80": 45, "suisen60": 43}}, {"id": "t-takehaya", "name": "都立 竹早高等学校", "short_name": "竹早", "type": "toritsu", "gender": "共学", "deviation": 67, "deviation_range": "66-67", "area": "都心", "category": "進学指導推進校", "station": "東京メトロ丸ノ内線 茗荷谷駅 徒歩10分 / 後楽園駅 徒歩12分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(メトロ丸ノ内線11分)→ 茗荷谷駅 ＋徒歩10分 ［計約49分］", "features": "文教地区・小石川に位置する名門進学校。「自主自律」を旨とし制服がない自由な校風。難関私大および国公立大への進学実績が堅調で、アットホームで穏やかな生徒が多い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/takehaya-h/", "naishin": {"kansan80": 59, "sonai80": 41, "suisen80": 45, "suisen60": 43}}, {"id": "t-toyotama", "name": "都立 豊多摩高等学校", "short_name": "豊多摩", "type": "toritsu", "gender": "共学", "deviation": 65, "deviation_range": "64-65", "area": "23区西部", "category": "進学指導推進校", "station": "京王井の頭線 浜田山駅 徒歩10分", "commute_time": 33, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停5分)→ 浜田山駅 ＋徒歩10分 ［計約35分］", "features": "井の頭線沿線の人気校。自主自律の精神と自主的な課外活動が盛ん。宮崎駿監督の出身校としても知られる。GMARCHを中心に難関大への進学実績が向上しており、校風の自由さと進学指導の両立が支持されている。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/toyotama-h/", "naishin": {"kansan80": 54, "sonai80": 37, "suisen80": 41, "suisen60": 39}}, {"id": "t-chofukita", "name": "都立 調布北高等学校", "short_name": "調布北", "type": "toritsu", "gender": "共学", "deviation": 63, "deviation_range": "62-64", "area": "多摩南部", "category": "進学指導推進校", "station": "京王線 調布駅 北口バス12分 / JR中央線 三鷹駅・吉祥寺駅 バス15〜20分", "commute_time": 26, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布駅 ＋北口バス12分(「調布北高前」下車すぐ) ［計約25〜28分］", "features": "聖蹟桜ヶ丘からのアクセスが抜群の進学指導推進校。手厚い学習サポートと講習体制により、国公立大学や難関私大への合格実績を着実に伸ばしている。文武両道で落ち着いた教育環境。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/chofukita-h/", "naishin": {"kansan80": 52, "sonai80": 36, "suisen80": 41, "suisen60": 39}}, {"id": "t-koganeikita", "name": "都立 小金井北高等学校", "short_name": "小金井北", "type": "toritsu", "gender": "共学", "deviation": 64, "deviation_range": "63-65", "area": "多摩北部", "category": "進学指導推進校", "station": "JR中央線 東小金井駅 徒歩11分 / 西武新宿線 花小金井駅 バス10分", "commute_time": 35, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線11分)→ 立川 →(中央線快速10分)→ 東小金井駅 ＋徒歩11分 ［計約38分］ ※府中駅経由バス乗継も可", "features": "通称「コガキタ」。多摩地区の中堅上位進学校として安定した実績。きめ細かい進路指導と学習支援で国公立大・早慶上理・GMARCHへ手堅い実績。落ち着いた校風で真面目な学習環境。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/koganeikita-h/", "naishin": {"kansan80": 55, "sonai80": 38, "suisen80": 42, "suisen60": 40}}, {"id": "t-hinodai", "name": "都立 日野台高等学校", "short_name": "日野台", "type": "toritsu", "gender": "共学", "deviation": 64, "deviation_range": "63-65", "area": "多摩南部", "category": "進学指導推進校", "station": "JR中央線 日野駅 徒歩15分 / 豊田駅 徒歩18分 (聖蹟桜ヶ丘からバス乗継可)", "commute_time": 28, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線11分)→ 立川 →(中央線3分)→ 日野駅 ＋徒歩15分 ［計約32分］ または聖蹟桜ヶ丘駅からバス直通/乗継ルートあり", "features": "多摩南部を代表する進学指導推進校。勉強と部活動を高次元で両立する校風。常盤樹祭（文化祭）など学校行事も熱気にあふれ、国公立大学や難関私大への進学実績が非常に堅調。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hinodai-h/", "naishin": {"kansan80": 54, "sonai80": 37, "suisen80": 43, "suisen60": 41}}, {"id": "t-showa", "name": "都立 昭和高等学校", "short_name": "昭和", "type": "toritsu", "gender": "共学", "deviation": 62, "deviation_range": "61-63", "area": "多摩北部", "category": "進学指導推進校", "station": "JR青梅線 東中神駅 徒歩5分 / JR中央線 立川駅 バス10分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線11分)→ 立川 →(青梅線4分)→ 東中神駅 ＋徒歩5分 ［計約30〜33分］", "features": "駅徒歩5分の抜群の立地。進学指導推進校として着実に進学実績を向上。部活動の加入率が非常に高く、体育祭・昭高祭など活気に満ちた高校生活が送れる人気校。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/showa-h/", "naishin": {"kansan80": 55, "sonai80": 38, "suisen80": 43, "suisen60": 41}}, {"id": "t-kitazono", "name": "都立 北園高等学校", "short_name": "北園", "type": "toritsu", "gender": "共学", "deviation": 65, "deviation_range": "64-66", "area": "23区北部", "category": "進学指導推進校", "station": "都営三田線 新板橋駅 徒歩6分 / JR埼京線 板橋駅 徒歩11分 / 東武東上線 下板橋駅 徒歩8分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR埼京線9分)→ 板橋駅 ＋徒歩11分 ［計約48分］", "features": "「自由と自治」を誇る伝統進学校。服装・頭髪自由。ドイツ語・フランス語などの第二外国語履修が可能。海外研修や探究学習が充実し、難関大への進学実績も高い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kitazono-h/", "naishin": {"kansan80": 56, "sonai80": 39, "suisen80": 43, "suisen60": 41}}, {"id": "t-komatsugawa", "name": "都立 小松川高等学校", "short_name": "小松川", "type": "toritsu", "gender": "共学", "deviation": 65, "deviation_range": "64-66", "area": "23区東部", "category": "進学指導推進校", "station": "JR総武線 平井駅 徒歩15分 / 東大島駅 徒歩12分", "commute_time": 56, "commute_route": "聖蹟桜ヶ丘 →(京王線特急26分)→ 笹塚 →(都営新宿線25分)→ 東大島駅 ＋徒歩12分 ［計約58分］", "features": "江戸川区・東部を代表する進学校。きめ細かい学習指導と充実した補習体制で国公立大学への高い現役進学実績を維持。文武両道で部活動も活発。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/komatsugawa-h/", "naishin": {"kansan80": 55, "sonai80": 38, "suisen80": 43, "suisen60": 42}}, {"id": "t-joto", "name": "都立 城東高等学校", "short_name": "城東", "type": "toritsu", "gender": "共学", "deviation": 64, "deviation_range": "63-65", "area": "23区東部", "category": "進学指導推進校", "station": "JR総武線・東武亀戸線 亀戸駅 徒歩15分 / 都営新宿線 西大島駅 徒歩12分", "commute_time": 52, "commute_route": "聖蹟桜ヶ丘 →(京王線特急26分)→ 笹塚 →(都営新宿線直通23分)→ 西大島駅 ＋徒歩12分 ［計約53分］", "features": "都立屈指のスポーツ強豪校でありながら進学指導推進校。甲子園出場実績のある野球部をはじめ部活動が超名門。高いエネルギーと団結力で難関大進学を達成する文武両道の代表格。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/joto-h/", "naishin": {"kansan80": 57, "sonai80": 39, "suisen80": 44, "suisen60": 42}}, {"id": "t-sumidagawa", "name": "都立 墨田川高等学校", "short_name": "墨田川", "type": "toritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "23区東部", "category": "進学指導推進校", "station": "東武伊勢崎線 東向島駅 徒歩6分 / 曳舟駅 徒歩10分", "commute_time": 58, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(都営新宿線・半蔵門線直通)→ 押上/曳舟 ＋徒歩10分 ［計約58分］", "features": "下町の伝統校で進学指導推進校。土曜授業「墨堤セミナー」など手厚い学力養成システム。進路指導が手厚く、GMARCHを中心に着実な進学実績を維持。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/sumidagawa-h/", "naishin": {"kansan80": 48, "sonai80": 33, "suisen80": 40, "suisen60": 37}}, {"id": "t-igusa", "name": "都立 井草高等学校", "short_name": "井草", "type": "toritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "23区西部", "category": "進学指導推進校", "station": "西武新宿線 上石神井駅 徒歩5分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺駅 ＋北口バス15分(または西武新宿線) ［計約46分］", "features": "自由な校風と温かい人間関係が根付く人気校。制服がなく私服通学。英語教育と国際理解教育に力を入れており、GMARCHへの進学実績が堅調。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/igusa-h/", "naishin": {"kansan80": 49, "sonai80": 34, "suisen80": 38, "suisen60": 36}}, {"id": "t-ueno", "name": "都立 上野高等学校", "short_name": "上野", "type": "toritsu", "gender": "共学", "deviation": 62, "deviation_range": "61-63", "area": "23区北部", "category": "進学指導推進校", "station": "東京メトロ千代田線 根津駅 徒歩6分 / JR上野駅(公園口) 徒歩12分", "commute_time": 52, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(メトロ丸ノ内線)→ 国会議事堂前/千代田線 → 根津駅 ＋徒歩6分 ［計約52分］", "features": "上野の森（上野恩賜公園）に隣接する落ち着いた環境。文化・芸術に触れる機会も多い。手厚い学習指導で難関国公立・私立大学への現役合格率を高めている。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/ueno-h/", "naishin": {"kansan80": 53, "sonai80": 37, "suisen80": 41, "suisen60": 39}}, {"id": "t-kohoku", "name": "都立 江北高等学校", "short_name": "江北", "type": "toritsu", "gender": "共学", "deviation": 56, "deviation_range": "55-57", "area": "23区北部", "category": "進学指導推進校", "station": "日暮里・舎人ライナー 西新井大師西駅 徒歩8分", "commute_time": 62, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(山手線)→ 日暮里 →(舎人ライナー15分)→ 西新井大師西駅 ＋徒歩8分 ［計約62分］", "features": "進学指導推進校として学習習慣の確立を徹底。特進クラスの設置や長期休業中の講習が充実。地域に愛される伝統校。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kohoku-h/", "naishin": {"kansan80": 47, "sonai80": 33, "suisen80": 38, "suisen60": 35}}, {"id": "t-nanpei", "name": "都立 南平高等学校", "short_name": "南平", "type": "toritsu", "gender": "共学", "deviation": 60, "deviation_range": "59-61", "area": "多摩南部", "category": "一般普通科", "station": "京王線 南平駅 徒歩10分", "commute_time": 16, "commute_route": "聖蹟桜ヶ丘 →(京王線特急5分)→ 高幡不動 →(京王線各停2分)→ 南平駅 ＋徒歩10分 ［計約16分］", "features": "聖蹟桜ヶ丘からわずか16分で通える極めて通学至便な進学校。「面倒見の南平」として知られ、朝学習や放課後補習が充実。GMARCHなど上位私大への進学実績が年々上昇。落ち着いた学習環境。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/nanpei-h/", "naishin": {"kansan80": 50, "sonai80": 35, "suisen80": 39, "suisen60": 37}}, {"id": "t-jindai", "name": "都立 神代高等学校", "short_name": "神代", "type": "toritsu", "gender": "共学", "deviation": 59, "deviation_range": "58-60", "area": "多摩南部", "category": "一般普通科", "station": "京王線 仙川駅 徒歩7分", "commute_time": 24, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(京王線快速7分)→ 仙川駅 ＋徒歩7分 ［計約24分］", "features": "京王線仙川駅近く、自由で明るい校風で毎年高い倍率を誇る超人気校。私服通学。アコースティックギター部やダンス部など活気ある部活が有名。難関私大進学実績も着実に向上。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/jindai-h/", "naishin": {"kansan80": 50, "sonai80": 35, "suisen80": 38, "suisen60": 36}}, {"id": "t-chofuminami", "name": "都立 調布南高等学校", "short_name": "調布南", "type": "toritsu", "gender": "共学", "deviation": 59, "deviation_range": "58-60", "area": "多摩南部", "category": "一般普通科", "station": "京王相模原線 京王多摩川駅 徒歩3分", "commute_time": 20, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(相模原線2分)→ 京王多摩川駅 ＋徒歩3分 ［計約18〜20分］", "features": "聖蹟桜ヶ丘から約20分、駅徒歩3分の好立地。通称「チョウナン」。活発な学校行事「若葉祭」や盛んな部活動、手厚い進路指導でGMARCH・日東駒専への合格実績が手堅い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/chofuminami-h/", "naishin": {"kansan80": 48, "sonai80": 33, "suisen80": 36, "suisen60": 35}}, {"id": "t-komae", "name": "都立 狛江高等学校", "short_name": "狛江", "type": "toritsu", "gender": "共学", "deviation": 60, "deviation_range": "59-61", "area": "多摩南部", "category": "一般普通科", "station": "小田急線 和泉多摩川駅 徒歩3分 / 喜多見駅 徒歩10分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線14分)→ 登戸 →(小田急線2分)→ 和泉多摩川駅 ＋徒歩3分 ［計約30〜33分］", "features": "多摩川沿いの緑豊かな環境。全国大会常連のダンス部や筝曲部など部活動が非常に強豪。文武両道の気風で生徒の活気が高く、GMARCHをはじめ上位大学への進学実績も良好。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/komae-h/", "naishin": {"kansan80": 52, "sonai80": 36, "suisen80": 40, "suisen60": 39}}, {"id": "t-fuchu", "name": "都立 府中高等学校", "short_name": "府中", "type": "toritsu", "gender": "共学", "deviation": 54, "deviation_range": "53-55", "area": "多摩南部", "category": "一般普通科", "station": "JR武蔵野線 北府中駅 徒歩12分 / 京王線 府中駅 バス10分", "commute_time": 22, "commute_route": "聖蹟桜ヶ丘 →(京王線特急6分)→ 府中駅 ＋北口バス10分(「府中高校前」下車) または分倍河原乗換北府中駅徒歩12分 ［計約20〜23分］", "features": "聖蹟桜ヶ丘からすぐの好立地。通称「フチコー」。真面目で落ち着いた校風。放課後自習室や補習制度が整っており、中堅私大への推薦枠も豊富。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/fuchu-h/", "naishin": {"kansan80": 45, "sonai80": 31, "suisen80": 34, "suisen60": 31}}, {"id": "t-fuchunishi", "name": "都立 府中西高等学校", "short_name": "府中西", "type": "toritsu", "gender": "共学", "deviation": 49, "deviation_range": "48-50", "area": "多摩南部", "category": "一般普通科", "station": "JR南武線 西府駅 徒歩15分 / 京王線 中河原駅 徒歩20分 / 聖蹟桜ヶ丘駅から自転車15分", "commute_time": 18, "commute_route": "聖蹟桜ヶ丘 →(京王線各停3分)→ 中河原駅 ＋徒歩20分(または分倍河原乗換西府駅徒歩15分) ［計約18〜20分］ ※聖蹟桜ヶ丘から自転車でも通学圏内", "features": "聖蹟桜ヶ丘から至近。多摩川に近く開放的なキャンパス。吹奏楽部やサッカー部などの部活動が盛ん。基礎基本の徹底と丁寧な進路相談で多様な進路をサポート。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/fuchunishi-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 30, "suisen60": 28}}, {"id": "t-fuchuhigashi", "name": "都立 府中東高等学校", "short_name": "府中東", "type": "toritsu", "gender": "共学", "deviation": 48, "deviation_range": "47-49", "area": "多摩南部", "category": "一般普通科", "station": "京王線 飛田給駅 徒歩12分 / 多磨霊園駅 徒歩15分", "commute_time": 23, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(京王線各停3分)→ 飛田給駅 ＋徒歩12分 ［計約23分］", "features": "味の素スタジアム近く。運動部活動が盛んで礼儀正しい指導に定評がある。情報教育やキャリア教育に力を入れ、専門学校から大学進学まで幅広い進路に対応。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/fuchuhigashi-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 30, "suisen60": 27}}, {"id": "t-fujimori", "name": "都立 富士森高等学校", "short_name": "富士森", "type": "toritsu", "gender": "共学", "deviation": 54, "deviation_range": "53-55", "area": "多摩西部", "category": "一般普通科", "station": "京王高尾線 山田駅 徒歩10分 / JR中央線 八王子駅 徒歩20分(バス10分)", "commute_time": 23, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 北野 →(京王高尾線3分)→ 山田駅 ＋徒歩10分 ［計約23分］", "features": "八王子の富士森公園に隣接。明るく活発な校風で吹奏楽部やダンス部が活発。近年大学進学への意識が高まり、指定校推薦枠を活かした進学実績が好調。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/fujimori-h/", "naishin": {"kansan80": 43, "sonai80": 30, "suisen80": 34, "suisen60": 33}}, {"id": "t-shoyo", "name": "都立 翔陽高等学校", "short_name": "翔陽", "type": "toritsu", "gender": "共学", "deviation": 56, "deviation_range": "55-57", "area": "多摩西部", "category": "単位制普通科", "station": "京王高尾線 狭間駅 徒歩4分 / 高尾駅 徒歩15分", "commute_time": 24, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 北野 →(京王高尾線10分)→ 狭間駅 ＋徒歩4分 ［計約24分］", "features": "京王高尾線狭間駅から徒歩4分の好アクセス。単位制普通科高校として、自分の進路に応じた多様な科目選択が可能。進学サポート体制が整い、日東駒専・成成明学などへの進学実績が堅実。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/shoyo-h/", "naishin": {"kansan80": 43, "sonai80": 30, "suisen80": 35, "suisen60": 32}}, {"id": "t-matsugaya", "name": "都立 松が谷高等学校", "short_name": "松が谷", "type": "toritsu", "gender": "共学", "deviation": 51, "deviation_range": "50-52", "area": "多摩南部", "category": "一般普通科", "station": "多摩都市モノレール 松が谷駅 徒歩15分 / 京王多摩センター駅 バス8分", "commute_time": 25, "commute_route": "聖蹟桜ヶ丘駅より京王多摩センター駅行バス(または高幡不動乗換モノレール) ［計約25分］", "features": "多摩ニュータウンの緑に囲まれた学校。普通科のなかに「外国語コース」を設置しており英語教育が充実。部活動・行事ともに活発でフレンドリーな校風。", "exam_type": "共通問題 / 推薦・一般（外国語コース選抜あり）", "url": "https://www.metro.ed.jp/matsugaya-h/", "naishin": {"kansan80": 44, "sonai80": 30, "suisen80": 34, "suisen60": 31}}, {"id": "t-hino", "name": "都立 日野高等学校", "short_name": "日野", "type": "toritsu", "gender": "共学", "deviation": 53, "deviation_range": "52-54", "area": "多摩南部", "category": "一般普通科", "station": "多摩都市モノレール 甲州街道駅 徒歩15分 / 京王線 高幡不動駅 バス10分", "commute_time": 20, "commute_route": "聖蹟桜ヶ丘 →(京王線特急5分)→ 高幡不動駅 ＋バス10分(またはモノレール甲州街道駅徒歩15分) ［計約20分］", "features": "聖蹟桜ヶ丘のお隣・日野市に位置。甲子園出場実績を持つ野球部をはじめ運動部が非常に盛ん。地域に根ざした教育と明るく礼儀正しい校風で人気。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hino-h/", "naishin": {"kansan80": 43, "sonai80": 30, "suisen80": 33, "suisen60": 32}}, {"id": "t-katakura", "name": "都立 片倉高等学校", "short_name": "片倉", "type": "toritsu", "gender": "共学", "deviation": 48, "deviation_range": "47-49", "area": "多摩西部", "category": "一般普通科", "station": "JR横浜線 片倉駅 徒歩10分 / 京王高尾線 京王片倉駅 徒歩15分", "commute_time": 26, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 北野 →(京王高尾線2分)→ 京王片倉駅 ＋徒歩15分 ［計約26分］", "features": "全日本吹奏楽コンクール常連の日本屈指の吹奏楽部を擁する。普通科に「造形美術コース」があり美術系進学にも強い特色ある学校。創造的で活気あふれるキャンパス。", "exam_type": "共通問題 / 推薦・一般（造形美術コース実技あり）", "url": "https://www.metro.ed.jp/katakura-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 31, "suisen60": 29}}, {"id": "t-nagayama", "name": "都立 永山高等学校", "short_name": "永山", "type": "toritsu", "gender": "共学", "deviation": 45, "deviation_range": "44-46", "area": "多摩南部", "category": "一般普通科", "station": "京王相模原線・小田急多摩線 永山駅 徒歩18分 / 聖蹟桜ヶ丘駅からバス15分", "commute_time": 18, "commute_route": "聖蹟桜ヶ丘駅より永山駅行バス(約15分) 「永山高校前」すぐ ［計約18分］", "features": "聖蹟桜ヶ丘駅から直通バスですぐの地元校。基礎学力の確実な定着と資格取得、キャリア教育に注力。生徒一人ひとりに寄り添った親身な進路指導が特徴。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/nagayama-h/", "naishin": {"kansan80": 36, "sonai80": 25, "suisen80": 26, "suisen60": 25}}, {"id": "t-naruse", "name": "都立 成瀬高等学校", "short_name": "成瀬", "type": "toritsu", "gender": "共学", "deviation": 57, "deviation_range": "56-58", "area": "多摩南部", "category": "一般普通科", "station": "JR横浜線 成瀬駅 徒歩12分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(相模原線15分)→ 橋本 →(横浜線12分)→ 成瀬駅 ＋徒歩12分 ［計約45分］", "features": "町田市の閑静な住宅街に位置する落ち着いた進学校。真面目で温かい校風。指定校推薦や一般受験で日東駒専・成成明学・GMARCHへ手堅く進学。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/naruse-h/", "naishin": {"kansan80": 45, "sonai80": 31, "suisen80": 37, "suisen60": 34}}, {"id": "t-ogawa", "name": "都立 小川高等学校", "short_name": "小川", "type": "toritsu", "gender": "共学", "deviation": 50, "deviation_range": "49-51", "area": "多摩南部", "category": "一般普通科", "station": "東急田園都市線 南町田グランベリーパーク駅 徒歩15分 / JR横浜線 成瀬駅 徒歩15分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線)→ 登戸 →(小田急線)→ 町田 →(横浜線)→ 成瀬駅 ＋徒歩15分 ［計約48分］", "features": "南町田グランベリーパーク至近。部活動や行事が盛んで明るい生徒が多い。一人ひとりの適性に合わせた進路指導を展開。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/ogawa-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 32, "suisen60": 29}}, {"id": "t-nozuta", "name": "都立 野津田高等学校", "short_name": "野津田", "type": "toritsu", "gender": "共学", "deviation": 43, "deviation_range": "42-44", "area": "多摩南部", "category": "一般普通科", "station": "小田急線 鶴川駅 バス15分 / JR横浜線 淵野辺駅 バス20分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 → 多摩センター経由バス または鶴川駅よりバス ［計約45分］", "features": "広大な自然と運動施設。普通科のほか「体育コース」や「福祉コース」を設置。運動部活動が盛んで礼儀正しい生徒が多い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/nozuta-h/", "naishin": {"kansan80": 31, "sonai80": 21, "suisen80": 24, "suisen60": 22}}, {"id": "t-yamazaki", "name": "都立 山崎高等学校", "short_name": "山崎", "type": "toritsu", "gender": "共学", "deviation": 45, "deviation_range": "44-46", "area": "多摩南部", "category": "一般普通科", "station": "JR横浜線 古淵駅 バス10分 / 小田急線 町田駅 バス20分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 → 多摩センター経由町田方面バス または橋本経由古淵駅 ［計約46分］", "features": "地域密着の面倒見の良い学校。ICTを活用した習熟度別授業を推進。ボランティアや部活動も活発。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/yamazaki-h/", "naishin": {"kansan80": 35, "sonai80": 24, "suisen80": 27, "suisen60": 25}}, {"id": "t-kodaira", "name": "都立 小平高等学校", "short_name": "小平", "type": "toritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "多摩北部", "category": "一般普通科", "station": "西武新宿線 小平駅 徒歩12分 / 西武多摩湖線 一橋学園駅 徒歩12分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線・武蔵野線10分)→ 西国分寺 →(西武多摩湖線5分)→ 一橋学園駅 ＋徒歩12分 ［計約40分］", "features": "普通科と外国語コースを設置。英語教育に定評があり、語学研修や国際交流が盛ん。女子生徒を中心に人気が高く、GMARCHなど文系難関大への進学率が高い。", "exam_type": "共通問題 / 推薦・一般（外国語コース選抜あり）", "url": "https://www.metro.ed.jp/kodaira-h/", "naishin": {"kansan80": 49, "sonai80": 34, "suisen80": 38, "suisen60": 36}}, {"id": "t-kodairaminami", "name": "都立 小平南高等学校", "short_name": "小平南", "type": "toritsu", "gender": "共学", "deviation": 56, "deviation_range": "55-57", "area": "多摩北部", "category": "一般普通科", "station": "西武国分寺線 鷹の台駅 徒歩15分 / JR武蔵野線 新小平駅 徒歩12分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線・武蔵野線10分)→ 新小平駅 ＋徒歩12分 ［計約36〜38分］", "features": "玉川上水の緑豊かな遊歩道沿いにあるアットホームな中堅校。部活動の加入率が高く、生徒の自主性を重んじる。大学進学実績も着実に向上。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kodairaminami-h/", "naishin": {"kansan80": 47, "sonai80": 33, "suisen80": 36, "suisen60": 34}}, {"id": "t-kodairanishi", "name": "都立 小平西高等学校", "short_name": "小平西", "type": "toritsu", "gender": "共学", "deviation": 46, "deviation_range": "45-47", "area": "多摩北部", "category": "一般普通科", "station": "西武拝島線・国分寺線 小川駅 徒歩15分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線・武蔵野線)→ 新小平/小川駅 ＋徒歩15分 ［計約42分］", "features": "緑に囲まれた静かなキャンパス。基礎学力の定着と生活指導を徹底。指定校推薦枠を活かした大学進学や専門学校・就職まで手厚く支援。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kodairanishi-h/", "naishin": {"kansan80": 39, "sonai80": 27, "suisen80": 28, "suisen60": 27}}, {"id": "t-higashiyamatonan", "name": "都立 東大和南高等学校", "short_name": "東大和南", "type": "toritsu", "gender": "共学", "deviation": 58, "deviation_range": "57-59", "area": "多摩北部", "category": "一般普通科", "station": "西武拝島線・多摩都市モノレール 玉川上水駅 徒歩5分", "commute_time": 33, "commute_route": "聖蹟桜ヶ丘 →(京王線特急5分)→ 高幡不動 →(多摩モノレール20分)→ 玉川上水駅 ＋徒歩5分 ［計約33分］", "features": "多摩モノレールで直結。駅徒歩5分の抜群の立地。熱心な学習指導と部活動の両立を掲げ、近年進学実績が急上昇している人気校。成成明学・GMARCHへの合格多数。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/higashiyamatonan-h/", "naishin": {"kansan80": 50, "sonai80": 35, "suisen80": 40, "suisen60": 38}}, {"id": "t-higashiyamato", "name": "都立 東大和高等学校", "short_name": "東大和", "type": "toritsu", "gender": "共学", "deviation": 53, "deviation_range": "52-54", "area": "多摩北部", "category": "一般普通科", "station": "西武拝島線 東大和市駅 徒歩12分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 → 高幡不動 →(モノレール)→ 玉川上水 →(西武拝島線2分)→ 東大和市駅 ＋徒歩12分 ［計約40分］", "features": "部活動が非常に盛んで運動部を中心に活気あふれる。生徒主体の行事と明るい校風。進学指導にも力を入れ、大学・短大への進学者が多数。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/higashiyamato-h/", "naishin": {"kansan80": 43, "sonai80": 30, "suisen80": 34, "suisen60": 32}}, {"id": "t-kiyose", "name": "都立 清瀬高等学校", "short_name": "清瀬", "type": "toritsu", "gender": "共学", "deviation": 55, "deviation_range": "54-56", "area": "多摩北部", "category": "一般普通科", "station": "西武池袋線 清瀬駅 徒歩7分", "commute_time": 50, "commute_route": "聖蹟桜ヶ丘 →(南武線・武蔵野線)→ 新秋津 →(徒歩5分)→ 秋津 →(西武池袋線2分)→ 清瀬駅 ＋徒歩7分 ［計約50分］", "features": "駅徒歩7分。温厚で真面目な校風。少人数指導や習熟度別授業を実施し、日東駒専をはじめとする大学進学実績が手堅い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kiyose-h/", "naishin": {"kansan80": 46, "sonai80": 32, "suisen80": 37, "suisen60": 34}}, {"id": "t-hoya", "name": "都立 保谷高等学校", "short_name": "保谷", "type": "toritsu", "gender": "共学", "deviation": 53, "deviation_range": "52-54", "area": "多摩北部", "category": "一般普通科", "station": "西武池袋線 保谷駅 徒歩15分", "commute_time": 52, "commute_route": "聖蹟桜ヶ丘 → 明大前 → 吉祥寺 →(西武バス) または武蔵野線経由 ［計約52分］", "features": "西東京市の閑静な住宅街にある穏やかな学校。部活動と学業の両立を推奨し、丁寧な進路相談で生徒の進路実現を支える。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hoya-h/", "naishin": {"kansan80": 44, "sonai80": 30, "suisen80": 33, "suisen60": 31}}, {"id": "t-tanashi", "name": "都立 田無高等学校", "short_name": "田無", "type": "toritsu", "gender": "共学", "deviation": 49, "deviation_range": "48-50", "area": "多摩北部", "category": "一般普通科", "station": "西武新宿線 田無駅 徒歩18分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 → 武蔵境駅よりバス(または田無駅徒歩) ［計約48分］", "features": "アットホームな校風。部活動が活発で明るい生徒が多い。進学から就職まで幅広い進路希望に対応したきめ細やかな指導体制。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/tanashi-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 29, "suisen60": 27}}, {"id": "t-kurumewest", "name": "都立 久留米西高等学校", "short_name": "久留米西", "type": "toritsu", "gender": "共学", "deviation": 47, "deviation_range": "46-48", "area": "多摩北部", "category": "一般普通科", "station": "西武池袋線 東久留米駅 バス10分 / 西武新宿線 花小金井駅 バス15分", "commute_time": 52, "commute_route": "聖蹟桜ヶ丘 → 西国分寺 → 花小金井駅経由バス ［計約52分］", "features": "自然豊かな落ち着いた環境。基礎学力の向上とキャリア教育に力を入れ、一人ひとりの適性に合わせた進路支援を行う。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/kurumenishi-h/", "naishin": {"kansan80": 37, "sonai80": 26, "suisen80": 29, "suisen60": 27}}, {"id": "t-fussa", "name": "都立 福生高等学校", "short_name": "福生", "type": "toritsu", "gender": "共学", "deviation": 49, "deviation_range": "48-50", "area": "多摩西部", "category": "一般普通科", "station": "JR青梅線 福生駅 徒歩15分 / JR八高線 東福生駅 徒歩10分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(南武線)→ 立川 →(青梅線16分)→ 福生駅 ＋徒歩15分 ［計約42分］", "features": "多摩川の自然に抱かれた環境。部活動が盛んで活気がある。ICT教育を推進し、指定校推薦枠を活かした進学指導も充実。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/fussa-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 31, "suisen60": 28}}, {"id": "t-hamura", "name": "都立 羽村高等学校", "short_name": "羽村", "type": "toritsu", "gender": "共学", "deviation": 44, "deviation_range": "43-45", "area": "多摩西部", "category": "一般普通科", "station": "JR青梅線 羽村駅 徒歩15分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 → 立川 →(青梅線20分)→ 羽村駅 ＋徒歩15分 ［計約45分］", "features": "地域に根ざした教育を実践。手厚い個別指導と進路ガイダンスにより、基礎学力の定着から進路決定までしっかりサポート。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hamura-h/", "naishin": {"kansan80": 33, "sonai80": 23, "suisen80": 24, "suisen60": 23}}, {"id": "t-haijima", "name": "都立 拝島高等学校", "short_name": "拝島", "type": "toritsu", "gender": "共学", "deviation": 44, "deviation_range": "43-45", "area": "多摩西部", "category": "一般普通科", "station": "JR青梅線・西武拝島線 拝島駅 徒歩15分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 → 高幡不動 →(モノレール)→ 玉川上水 →(西武拝島線7分)→ 拝島駅 ＋徒歩15分 ［計約38分］", "features": "ターミナル拝島駅から徒歩圏。体験型学習やキャリア教育に注力。落ち着いた環境で自分のペースで学べる。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/haijima-h/", "naishin": {"kansan80": 35, "sonai80": 24, "suisen80": 27, "suisen60": 24}}, {"id": "t-hachiojikita", "name": "都立 八王子北高等学校", "short_name": "八王子北", "type": "toritsu", "gender": "共学", "deviation": 48, "deviation_range": "47-49", "area": "多摩西部", "category": "一般普通科", "station": "JR中央線 八王子駅 / 京王八王子駅 北口バス20分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急15分)→ 京王八王子駅 ＋北口バス20分 ［計約38分］", "features": "自然豊かな八王子北部の高台に位置。部活動が盛んで特に運動部の活動が活発。手厚い生活指導と進路サポートで安心の環境。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hachiojikita-h/", "naishin": {"kansan80": 39, "sonai80": 27, "suisen80": 29, "suisen60": 28}}, {"id": "t-musashimurayama", "name": "都立 武蔵村山高等学校", "short_name": "武蔵村山", "type": "toritsu", "gender": "共学", "deviation": 45, "deviation_range": "44-46", "area": "多摩北部", "category": "一般普通科", "station": "多摩都市モノレール 上北台駅 バス10分 / 立川駅 バス30分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 → 高幡不動 →(多摩モノレール25分)→ 上北台駅 ＋バス10分 ［計約46分］", "features": "豊かな自然に恵まれた環境。体験的・探究的な学習を重視。資格取得や部活動への取り組みを奨励し、手厚い個別進路指導を実施。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/musashimurayama-h/", "naishin": {"kansan80": 38, "sonai80": 26, "suisen80": 29, "suisen60": 28}}, {"id": "t-roka", "name": "都立 芦花高等学校", "short_name": "芦花", "type": "toritsu", "gender": "共学", "deviation": 54, "deviation_range": "53-55", "area": "23区西部", "category": "単位制普通科", "station": "京王線 千歳烏山駅 徒歩13分 / 京王井の頭線 富士見ヶ丘駅 徒歩15分", "commute_time": 28, "commute_route": "聖蹟桜ヶ丘 →(京王線特急15分)→ 千歳烏山駅 ＋徒歩13分 ［計約28分］", "features": "京王線千歳烏山駅から徒歩圏。単位制普通科高校として一人ひとりの興味や進路に合わせた履修が可能。落ち着いた環境で、大学進学指導にも注力。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/roka-h/", "naishin": {"kansan80": 46, "sonai80": 32, "suisen80": 36, "suisen60": 33}}, {"id": "t-matsubara", "name": "都立 松原高等学校", "short_name": "松原", "type": "toritsu", "gender": "共学", "deviation": 50, "deviation_range": "49-51", "area": "23区西部", "category": "一般普通科", "station": "京王線・東急世田谷線 下高井戸駅 徒歩6分 / 京王線・井の頭線 明大前駅 徒歩12分", "commute_time": 26, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前駅 ＋徒歩12分 (または下高井戸駅徒歩6分) ［計約26分］", "features": "京王線明大前・下高井戸から徒歩ですぐの世田谷区内の好立地。自由な校風とフレンドリーな人間関係。キャリアガイダンスや大学見学など手厚い進路支援。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/matsubara-h/", "naishin": {"kansan80": 40, "sonai80": 28, "suisen80": 30, "suisen60": 28}}, {"id": "t-suginami", "name": "都立 杉並高等学校", "short_name": "杉並", "type": "toritsu", "gender": "共学", "deviation": 56, "deviation_range": "55-57", "area": "23区西部", "category": "一般普通科", "station": "東京メトロ丸ノ内線 南阿佐ケ谷駅 徒歩12分 / JR中央線 荻窪駅・阿佐ケ谷駅 徒歩15分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺 →(中央線快速5分)→ 荻窪駅 ＋徒歩15分 ［計約44分］", "features": "全国レベルの吹奏楽部を筆頭に部活動が活発。真面目で活発な校風で、指定校推薦枠を活かした大学進学実績が充実。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/suginami-h/", "naishin": {"kansan80": 42, "sonai80": 29, "suisen80": 32, "suisen60": 30}}, {"id": "t-shakujii", "name": "都立 石神井高等学校", "short_name": "石神井", "type": "toritsu", "gender": "共学", "deviation": 56, "deviation_range": "55-57", "area": "23区西部", "category": "一般普通科", "station": "西武新宿線 上石神井駅 徒歩15分 / 西武池袋線 大泉学園駅 バス10分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺駅 ＋北口バス15分 ［計約48分］", "features": "広い敷地と充実した運動施設。伝統の体育祭や球技大会など熱気にあふれる校風。文武両道を目指し、近年GMARCH・日東駒専の現役進学者が増加中。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/shakujii-h/", "naishin": {"kansan80": 49, "sonai80": 34, "suisen80": 38, "suisen60": 35}}, {"id": "t-musashigaoka", "name": "都立 武蔵丘高等学校", "short_name": "武蔵丘", "type": "toritsu", "gender": "共学", "deviation": 57, "deviation_range": "56-58", "area": "23区西部", "category": "一般普通科", "station": "西武池袋線 富士見台駅 徒歩10分 / 西武新宿線 鷺ノ宮駅 徒歩15分", "commute_time": 50, "commute_route": "聖蹟桜ヶ丘 → 明大前 → 新宿 →(西武新宿線)→ 鷺ノ宮駅 ＋徒歩15分 ［計約50分］", "features": "通称「ムサオカ」。制服がなく私服通学。活発な校風で部活動や緑陰祭（文化祭）が盛ん。進学指導にも力を入れ上位私大への実績が好調。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/musashigaoka-h/", "naishin": {"kansan80": 46, "sonai80": 32, "suisen80": 34, "suisen60": 33}}, {"id": "t-saginomiya", "name": "都立 鷺宮高等学校", "short_name": "鷺宮", "type": "toritsu", "gender": "共学", "deviation": 54, "deviation_range": "53-55", "area": "23区西部", "category": "一般普通科", "station": "西武新宿線 都立家政駅 徒歩3分 / 鷺ノ宮駅 徒歩8分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 → 高田馬場経由西武新宿線 都立家政駅 ＋徒歩3分 ［計約46分］", "features": "都立家政駅徒歩3分の好立地。明るく自主的な生徒が多く、部活動の加入率も高い。中堅私大への手堅い進学実績を維持。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/saginomiya-h/", "naishin": {"kansan80": 45, "sonai80": 31, "suisen80": 33, "suisen60": 32}}, {"id": "t-meguro", "name": "都立 目黒高等学校", "short_name": "目黒", "type": "toritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "23区西部", "category": "一般普通科", "station": "東急東横線 祐天寺駅 徒歩5分 / 中目黒駅 徒歩12分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行6分)→ 渋谷 →(東急東横線6分)→ 祐天寺駅 ＋徒歩5分 ［計約40〜42分］", "features": "祐天寺駅徒歩5分とおしゃれで落ち着いた住宅街に位置。女子にも絶大な人気。手厚い学習指導でGMARCHや国公立大への現役進学者が年々増加。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/meguro-h/", "naishin": {"kansan80": 51, "sonai80": 35, "suisen80": 40, "suisen60": 38}}, {"id": "t-hiroo", "name": "都立 広尾高等学校", "short_name": "広尾", "type": "toritsu", "gender": "共学", "deviation": 58, "deviation_range": "57-59", "area": "都心", "category": "一般普通科", "station": "JR山手線・東京メトロ日比谷線 恵比寿駅 徒歩10分 / 広尾駅 徒歩10分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行6分)→ 渋谷 →(JR山手線2分)→ 恵比寿駅 ＋徒歩10分 ［計約40〜42分］", "features": "渋谷・恵比寿至近の抜群のロケーション。明るく自立心旺盛な生徒が集まる。大学受験に向けた土曜講習や手厚い進路指導で人気上昇中。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/hiroo-h/", "naishin": {"kansan80": 49, "sonai80": 34, "suisen80": 38, "suisen60": 36}}, {"id": "t-yukigaya", "name": "都立 雪谷高等学校", "short_name": "雪谷", "type": "toritsu", "gender": "共学", "deviation": 57, "deviation_range": "56-58", "area": "23区南部", "category": "一般普通科", "station": "東急池上線 雪が谷大塚駅 徒歩8分 / 御嶽山駅 徒歩8分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線26分)→ 武蔵小杉 →(東急東横線/多摩川線/池上線) ［計約46分］", "features": "甲子園出場実績を持つ名門野球部をはじめスポーツが極めて盛ん。明るく活力のある校風で、文武両道を実践し上位私大へ手堅い実績を誇る。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/yukigaya-h/", "naishin": {"kansan80": 48, "sonai80": 33, "suisen80": 38, "suisen60": 36}}, {"id": "t-denenchofu", "name": "都立 田園調布高等学校", "short_name": "田園調布", "type": "toritsu", "gender": "共学", "deviation": 53, "deviation_range": "52-54", "area": "23区南部", "category": "一般普通科", "station": "東急多摩川線 沼部駅 徒歩7分 / 東急東横線 田園調布駅 徒歩15分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線)→ 武蔵小杉 →(東急東横線・多摩川線)→ 沼部駅 ＋徒歩7分 ［計約45分］", "features": "多摩川を望む緑豊かで閑静な高台。落ち着いた学習環境と温かい校風。アドバンス講習や自習サポートが充実し大学進学率向上。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/denenchofu-h/", "naishin": {"kansan80": 46, "sonai80": 32, "suisen80": 36, "suisen60": 33}}, {"id": "t-sakuramachi", "name": "都立 桜町高等学校", "short_name": "桜町", "type": "toritsu", "gender": "共学", "deviation": 51, "deviation_range": "50-52", "area": "23区西部", "category": "一般普通科", "station": "東急田園都市線 桜新町駅 徒歩10分 / 用賀駅 徒歩12分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線)→ 溝の口 →(田園都市線)→ 桜新町駅 ＋徒歩10分 ［計約42分］", "features": "サザエさんの街・桜新町に位置。落ち着いた環境で女子人気も高い。丁寧な習熟度別授業と指定校推薦枠を活かした進路指導。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/sakuramachi-h/", "naishin": {"kansan80": 38, "sonai80": 26, "suisen80": 29, "suisen60": 27}}, {"id": "t-bunkyo", "name": "都立 文京高等学校", "short_name": "文京", "type": "toritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "23区北部", "category": "一般普通科", "station": "JR山手線・都営三田線 巣鴨駅 徒歩10分 / 大塚駅 徒歩10分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR山手線12分)→ 巣鴨駅 ＋徒歩10分 ［計約48分］", "features": "巣鴨駅近くの落ち着いた教育環境。熱心な教員陣による進学補習が充実。GMARCHなど難関私大への合格実績が手堅く、部活動加入率も高い。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/bunkyo-h/", "naishin": {"kansan80": 52, "sonai80": 36, "suisen80": 41, "suisen60": 39}}, {"id": "t-fukagawa", "name": "都立 深川高等学校", "short_name": "深川", "type": "toritsu", "gender": "共学", "deviation": 58, "deviation_range": "57-59", "area": "23区東部", "category": "一般普通科", "station": "東京メトロ東西線・都営大江戸線 東陽町駅 徒歩2分", "commute_time": 54, "commute_route": "聖蹟桜ヶ丘 →(京王線特急26分)→ 笹塚 →(都営新宿線)→ 九段下 →(東西線10分)→ 東陽町駅 ＋徒歩2分 ［計約54分］", "features": "駅徒歩2分。普通科のほかに外国語コースを設置。オーストラリア等への語学研修や生きた英語教育に強み。女子人気が高く国際色豊か。", "exam_type": "共通問題 / 推薦・一般（外国語コース選抜あり）", "url": "https://www.metro.ed.jp/fukagawa-h/", "naishin": {"kansan80": 48, "sonai80": 33, "suisen80": 38, "suisen60": 36}}, {"id": "t-edogawa", "name": "都立 江戸川高等学校", "short_name": "江戸川", "type": "toritsu", "gender": "共学", "deviation": 59, "deviation_range": "58-60", "area": "23区東部", "category": "一般普通科", "station": "都営新宿線 船堀駅 徒歩15分 / JR総武線 新小岩駅 バス10分", "commute_time": 55, "commute_route": "聖蹟桜ヶ丘 →(京王線特急26分)→ 笹塚 →(都営新宿線直通27分)→ 船堀駅 ＋徒歩15分 ［計約55分］", "features": "京王線・都営新宿線相互直通で一本アクセス可能。部活動が非常に盛んでアーチェリー部など強豪。団結力と活気があり、私大進学も堅調。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/edogawa-h/", "naishin": {"kansan80": 50, "sonai80": 35, "suisen80": 39, "suisen60": 37}}, {"id": "t-itabashi", "name": "都立 板橋高等学校", "short_name": "板橋", "type": "toritsu", "gender": "共学", "deviation": 47, "deviation_range": "46-48", "area": "23区北部", "category": "一般普通科", "station": "東武東上線 中板橋駅 徒歩10分", "commute_time": 50, "commute_route": "聖蹟桜ヶ丘 → 新宿 → 池袋 →(東武東上線7分)→ 中板橋駅 ＋徒歩10分 ［計約50分］", "features": "落ち着いた環境で基礎からしっかり学べる学校。生徒指導と進路相談が親身で、推薦入試等での大学進学実績を着実に伸ばす。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/itabashi-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 29, "suisen60": 27}}, {"id": "t-takashima", "name": "都立 高島高等学校", "short_name": "高島", "type": "toritsu", "gender": "共学", "deviation": 51, "deviation_range": "50-52", "area": "23区北部", "category": "一般普通科", "station": "都営三田線 西高島平駅 徒歩7分", "commute_time": 58, "commute_route": "聖蹟桜ヶ丘 → 新宿 →(都営新宿線)→ 神保町 →(都営三田線30分)→ 西高島平駅 ＋徒歩7分 ［計約58分］", "features": "駅徒歩7分。体育祭や文化祭など行事が熱く盛り上がる。部活動への参加率が高く、大学進学指導にも力を注ぐ中堅校。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/takashima-h/", "naishin": {"kansan80": 41, "sonai80": 28, "suisen80": 31, "suisen60": 29}}, {"id": "t-adachi", "name": "都立 足立高等学校", "short_name": "足立", "type": "toritsu", "gender": "共学", "deviation": 51, "deviation_range": "50-52", "area": "23区北部", "category": "一般普通科", "station": "東武スカイツリーライン 五反野駅 徒歩10分", "commute_time": 60, "commute_route": "聖蹟桜ヶ丘 → 新宿 →(山手線)→ 北千住 →(東武線2分)→ 五反野駅 ＋徒歩10分 ［計約60分］", "features": "創立100年近い歴史を誇る伝統校。文武両道を重視し、礼儀正しく活力ある生徒を育成。手厚い補習体制で大学進学をサポート。", "exam_type": "共通問題 / 推薦・一般", "url": "https://www.metro.ed.jp/adachi-h/", "naishin": {"kansan80": 43, "sonai80": 30, "suisen80": 33, "suisen60": 31}}];
+const shiritsuSchools = [{"id": "p-wasedajitsugyo", "name": "早稲田実業学校高等部", "short_name": "早稲田実業", "type": "shiritsu", "gender": "共学", "deviation": 75, "deviation_range": "74-76", "area": "多摩北部", "category": "早慶・難関付属", "station": "JR中央線・西武国分寺線 国分寺駅 徒歩7分", "commute_time": 25, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線・武蔵野線10分)→ 西国分寺 →(中央線2分)→ 国分寺駅 ＋徒歩7分 ［計約25分］ ※聖蹟桜ヶ丘駅から国分寺駅南口行バス直通(約30分)＋徒歩10分も利用可", "features": "早稲田大学の系属校。卒業生のほぼ全員が早稲田大学の各学部へ推薦進学。甲子園常連の野球部など全国レベルのスポーツ部活と高度な学業が高次元で融合。国分寺駅から徒歩7分と聖蹟桜ヶ丘からの通学利便性も抜群。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.wasedajitsugyo.ed.jp/"}, {"id": "p-keiojoshi", "name": "慶應義塾女子高等学校", "short_name": "慶應女子", "type": "shiritsu", "gender": "女子校", "deviation": 76, "deviation_range": "75-77", "area": "都心", "category": "早慶・難関付属", "station": "都営三田線・浅草線 三田駅 徒歩8分 / JR山手線・京浜東北線 田町駅 徒歩10分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(都営新宿線)→ 神保町 →(都営三田線9分)→ 三田駅 ＋徒歩8分 ［計約45分］", "features": "慶應義塾唯一の女子校にして全国最難関の女子高校。卒業生のほぼ100%が慶應義塾大学（医学部・法学部・経済学部など）へ推薦進学。「独立自尊」を体現する高い知性と品格を備えた自由な校風。", "exam_type": "一般（3教科・作文） / 推薦（高内申＋作文・面接）", "url": "https://www.fhs.keio.ac.jp/"}, {"id": "p-wasedagakuin", "name": "早稲田大学高等学院", "short_name": "早大学院", "type": "shiritsu", "gender": "男子校", "deviation": 75, "deviation_range": "74-76", "area": "23区西部", "category": "早慶・難関付属", "station": "西武新宿線 上石神井駅 徒歩7分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺駅 ＋北口バス15分(学院前下車すぐ) ［計約45分］", "features": "早稲田大学直属の男子付属校。卒業生は全員早稲田大学へ進学。大学レベルの教養教育、第二外国語の必修などアカデミックな教育環境。制服がなく自主自立の校風。", "exam_type": "一般（3教科・小論文） / 自己推薦", "url": "https://www.waseda.jp/school/jhs/"}, {"id": "p-meijimeiji", "name": "明治大学付属明治高等学校", "short_name": "明大明治", "type": "shiritsu", "gender": "共学", "deviation": 72, "deviation_range": "71-73", "area": "多摩南部", "category": "GMARCH付属", "station": "京王線 調布駅 北口バス15分 / JR中央線 三鷹駅 南口バス20分", "commute_time": 30, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布駅 ＋北口直通系統バス15分 ［計約28〜30分］", "features": "明治大学直系で唯一の直属校。調布キャンパスの充実した最新設備。卒業生の約90%が明治大学へ推薦進学。高い進学基準と質の高い授業を展開する難関付属校。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.meiji.ac.jp/ko_kou/"}, {"id": "p-chuo-fuzoku", "name": "中央大学附属高等学校", "short_name": "中大附属", "type": "shiritsu", "gender": "共学", "deviation": 70, "deviation_range": "69-71", "area": "多摩北部", "category": "GMARCH付属", "station": "JR中央線 武蔵小金井駅 バス7分 / 東小金井駅 徒歩18分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急6分)→ 府中駅 ＋北口バス15分(武蔵小金井駅方面) ［計約30〜33分］ または分倍河原・立川経由武蔵小金井駅", "features": "緑豊かな小金井キャンパス。私服通学で自由闊達な校風。卒業生の約85〜90%が中央大学（法・経・商・理工等）へ進学。他大学受験へのサポート体制も充実。", "exam_type": "一般（3教科） / 推薦（出願基準内申＋適性・面接）", "url": "https://www.chu-fu.ed.jp/"}, {"id": "p-chuo-suginami", "name": "中央大学杉並高等学校", "short_name": "中大杉並", "type": "shiritsu", "gender": "共学", "deviation": 70, "deviation_range": "69-71", "area": "23区西部", "category": "GMARCH付属", "station": "西武新宿線 上井草駅 徒歩12分 / JR中央線 荻窪駅 バス12分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺 →(中央線快速5分)→ 荻窪駅 ＋北口バス12分 ［計約45分］", "features": "中央大学直属の共学校。卒業生の約90%が中央大学へ進学。緑豊かな閑静な住宅街にあり、真面目で温かい校風。国公立大・他私大併願制度も整備。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.chusugi.ed.jp/"}, {"id": "p-chuo-high", "name": "中央大学高等学校", "short_name": "中大高", "type": "shiritsu", "gender": "共学", "deviation": 69, "deviation_range": "68-70", "area": "都心", "category": "GMARCH付属", "station": "東京メトロ丸ノ内線・南北線 後楽園駅 徒歩3分 / 都営三田線・大江戸線 春日駅 徒歩3分", "commute_time": 45, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(メトロ丸ノ内線13分)→ 後楽園駅 ＋徒歩3分 ［計約45分］", "features": "中央大学後楽園キャンパス内にあり、大学の施設を共用。昼間定時制（実質全日制同様）というユニークな形態。約85%が中央大学へ進学。アットホームで高い進学率。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.cu-hs.chuo-u.ac.jp/"}, {"id": "p-meijihachioji", "name": "明治大学付属八王子高等学校", "short_name": "明八", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-69", "area": "多摩西部", "category": "GMARCH付属", "station": "JR中央線 八王子駅 / 京王線 京王八王子駅 スクールバス20分 / 拝島駅 スクールバス", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急15分)→ 京王八王子駅 ＋専用スクールバス20分 ［計約38分］", "features": "八王子の丘陵に広がる東京ドーム約6個分の広大なキャンパス。卒業生の約90%が明治大学へ推薦進学。充実したスポーツ施設と豊かな自然のなかで伸び伸び学べる環境。", "exam_type": "一般（3教科） / 単願推薦（内申基準＋適性検査・面接）", "url": "https://www.mnh.ed.jp/"}, {"id": "p-meijinakano", "name": "明治大学付属中野高等学校", "short_name": "明中", "type": "shiritsu", "gender": "男子校", "deviation": 70, "deviation_range": "69-71", "area": "都心", "category": "GMARCH付属", "station": "JR中央・総武線・都営大江戸線 東中野駅 徒歩5分 / 東京メトロ東西線 落合駅 徒歩8分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR総武線5分)→ 東中野駅 ＋徒歩5分 ［計約40分］", "features": "質実剛健の伝統を誇る男子付属校。卒業生の約85%以上が明治大学へ推薦進学。ラグビー部や相撲部など全国レベルの部活動が多く、活気と団結力にあふれる男子教育。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.meinaka.jp/"}, {"id": "p-hosei-high", "name": "法政大学高等学校", "short_name": "法政高校", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-69", "area": "多摩北部", "category": "GMARCH付属", "station": "京王井の頭線 井の頭公園駅 徒歩12分 / JR中央線 三鷹駅 バス10分", "commute_time": 36, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停7分)→ 井の頭公園駅 ＋徒歩12分 ［計約38分］", "features": "井の頭恩賜公園に近接する素晴らしい環境。「自由と進歩」を体現する自由な校風。卒業生の約85〜90%が法政大学へ推薦進学。難関他大学への挑戦枠も用意。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性検査・面接）", "url": "https://www.hosei.ed.jp/sh/high/"}, {"id": "p-aoyama-gakuin", "name": "青山学院高等部", "short_name": "青学高等部", "type": "shiritsu", "gender": "共学", "deviation": 71, "deviation_range": "70-72", "area": "都心", "category": "GMARCH付属", "station": "東京メトロ銀座線・半蔵門線 表参道駅 徒歩10分 / JR各線 渋谷駅 徒歩12分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行6分)→ 渋谷駅 ＋徒歩12分 ［計約40分］", "features": "渋谷・表参道の青山キャンパス。キリスト教信仰に基づく教育。卒業生の約85%が青山学院大学へ推薦進学。自由で国際的な雰囲気にあふれ、高い人気を誇る共学校。", "exam_type": "一般（3教科） / 推薦（高内申＋適性・面接）", "url": "https://www.agh.aoyama.ed.jp/"}, {"id": "p-rikkyo-ikebukuro", "name": "立教池袋高等学校", "short_name": "立教池袋", "type": "shiritsu", "gender": "男子校", "deviation": 71, "deviation_range": "70-72", "area": "都心", "category": "GMARCH付属", "station": "JR山手線・東武・西武・東京メトロ 池袋駅 西口徒歩8分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR山手線/埼京線6分)→ 池袋駅 ＋徒歩8分 ［計約45分］", "features": "キリスト教に基づく人間教育。卒業生のほぼ全員が立教大学へ推薦進学。池袋駅から徒歩8分の都市型キャンパス。男子校ならではの深い友情と豊かな課外活動が魅力。", "exam_type": "一般（3教科） / 単願推薦", "url": "https://ikebukuro.rikkyo.ac.jp/"}, {"id": "p-seikei", "name": "成蹊高等学校", "short_name": "成蹊", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "67-69", "area": "多摩北部", "category": "大学付属・進学", "station": "JR中央線・京王井の頭線 吉祥寺駅 北口バス5分(徒歩15分)", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺駅 ＋北口バス5分/徒歩15分 ［計約42分］", "features": "吉祥寺の広大なケヤキ並木キャンパス。成蹊大学への推薦枠（約30〜40%）を確保しつつ、東京大学をはじめとする難関国公立・早慶上智への進学実績が豊富。リベラルアーツを重視。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.seikei.ac.jp/jsh/"}, {"id": "p-seijo-gakuen", "name": "成城学園高等学校", "short_name": "成城学園", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "64-66", "area": "23区西部", "category": "大学付属・進学", "station": "小田急小田原線 成城学園前駅 徒歩5分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線14分)→ 登戸 →(小田急線急行3分)→ 成城学園前駅 ＋徒歩5分 ［計約30〜33分］", "features": "成城の高級住宅街に広がる緑豊かなキャンパス。個性を尊重する自由な教育方針。成城大学への推薦（約50〜60%）のほか、他大学への進学指導も充実。聖蹟桜ヶ丘から登戸経由で好アクセス。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.seijogakuen.ed.jp/"}, {"id": "p-kokugakuin-kugayama", "name": "國學院大學久我山高等学校", "short_name": "久我山", "type": "shiritsu", "gender": "共学", "deviation": 70, "deviation_range": "69-71", "area": "23区西部", "category": "難関進学校", "station": "京王井の頭線 久我山駅 徒歩10分", "commute_time": 33, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行5分)→ 久我山駅 ＋徒歩10分 ［計約33分］", "features": "井の頭線沿線の名門進学校。男子部・女子部の別学クラス制（男女別学共学校）。ラグビー部やサッカー部が全国屈指の強豪でありながら、東大・難関国立・早慶上理への圧倒的な進学実績を誇る「文武両道」の代表格。", "exam_type": "一般（3教科・STコース/一般コース） / 推薦", "url": "https://www.kugayama-h.ed.jp/"}, {"id": "p-kokugakuin", "name": "國學院高等学校", "short_name": "國學院", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "64-66", "area": "都心", "category": "大学付属・進学", "station": "東京メトロ銀座線 外苑前駅 徒歩5分 / JR総武線 千駄ヶ谷駅 徒歩10分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行6分)→ 渋谷 →(メトロ銀座線4分)→ 外苑前駅 ＋徒歩5分 ［計約42分］", "features": "神宮外苑に位置する伝統校。國學院大學への優先推薦枠を持ちつつ、生徒の大多数が国公立大学や早慶上理・GMARCHなど他大学へ進学する実質的進学校。落ち着いた生活指導。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.kokugakuin.ed.jp/"}, {"id": "p-nichidai-tsurugaoka", "name": "日本大学鶴ヶ丘高等学校", "short_name": "日大鶴ヶ丘", "type": "shiritsu", "gender": "共学", "deviation": 67, "deviation_range": "65-67", "area": "23区西部", "category": "大学付属・進学", "station": "京王線・京王井の頭線 明大前駅 徒歩8分", "commute_time": 28, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前駅 ＋徒歩8分 ［計約28分］", "features": "聖蹟桜ヶ丘から京王線特急1本で明大前駅下車すぐの抜群の通学利便性。「特進コース」と「普通コース」を設置。日大推薦枠を保持しながら難関国公立・早慶上理・GMARCHを目指せる人気校。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.tsurugaoka.hs.nihon-u.ac.jp/"}, {"id": "p-nichidai-sakuragaoka", "name": "日本大学櫻丘高等学校", "short_name": "日大櫻丘", "type": "shiritsu", "gender": "共学", "deviation": 60, "deviation_range": "59-61", "area": "23区西部", "category": "大学付属・進学", "station": "京王線 下高井戸駅 徒歩8分 / 桜上水駅 徒歩8分", "commute_time": 26, "commute_route": "聖蹟桜ヶ丘 →(京王線特急15分)→ 千歳烏山 →(京王線急行3分)→ 下高井戸駅 ＋徒歩8分 ［計約26分］", "features": "京王線沿線で通いやすい日大付属校。日本大学文理学部の広大なキャンパスに隣接。アットホームで明るい校風。卒業生の約70%が日本大学各学部へ進学。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.sakuragaoka.hs.nihon-u.ac.jp/"}, {"id": "p-nichidai-dai-ni", "name": "日本大学第二高等学校", "short_name": "日大二高", "type": "shiritsu", "gender": "共学", "deviation": 66, "deviation_range": "65-67", "area": "23区西部", "category": "大学付属・進学", "station": "JR中央線・東京メトロ丸ノ内線 荻窪駅 徒歩15分 / 西武新宿線 井荻駅 徒歩15分", "commute_time": 44, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺 →(中央線快速5分)→ 荻窪駅 ＋徒歩15分 ［計約44分］", "features": "日大特別付属校の中でも進学校としての色彩が強い伝統校。日大への推薦枠（約30%進学）を保持しつつ、生徒の大半が国公立大学や早慶上智・GMARCHへ進学。広大なグラウンドと文武両道の校風。", "exam_type": "一般（3教科） / 推薦（内申基準＋適性・面接）", "url": "https://www.nichidai2.ac.jp/"}, {"id": "p-nichidai-dai-san", "name": "日本大学第三高等学校", "short_name": "日大三高", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "58-68", "area": "多摩南部", "category": "大学付属・進学", "station": "JR横浜線 淵野辺駅 / 京王線・小田急線 多摩センター駅 スクールバス・路線バス", "commute_time": 35, "commute_route": "聖蹟桜ヶ丘駅より多摩センター経由バス(または淵野辺駅よりスクールバス) ［計約35〜40分］", "features": "甲子園優勝経験を持つ全国屈指の野球部をはじめ、部活動が超名門。「特進クラス（偏差値68）」と「普通クラス（偏差値58）」を設置。日大推薦枠に加え難関大進学にも対応。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.nichidai3.ed.jp/"}, {"id": "p-nichidai-buzan", "name": "日本大学豊山高等学校", "short_name": "日大豊山", "type": "shiritsu", "gender": "男子校", "deviation": 60, "deviation_range": "59-61", "area": "都心", "category": "大学付属・進学", "station": "東京メトロ有楽町線 護国寺駅 徒歩1分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(都営新宿線)→ 市ヶ谷 →(メトロ有楽町線6分)→ 護国寺駅 ＋徒歩1分 ［計約46分］", "features": "護国寺駅徒歩1分の好立地。日大唯一の男子校。オリンピック選手を輩出する水泳部をはじめスポーツ強豪校。卒業生の約80%が日本大学各学部へ進学。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.buzan.hs.nihon-u.ac.jp/"}, {"id": "p-nichidai-buzan-joshi", "name": "日本大学豊山女子高等学校", "short_name": "日大豊山女子", "type": "shiritsu", "gender": "女子校", "deviation": 56, "deviation_range": "55-57", "area": "23区北部", "category": "大学付属・進学", "station": "東武東上線 中板橋駅 徒歩15分 / 都営三田線 板橋本町駅 徒歩15分", "commute_time": 52, "commute_route": "聖蹟桜ヶ丘 → 新宿 → 池袋 →(東武東上線7分)→ 中板橋駅 ＋徒歩15分 ［計約52分］", "features": "日大唯一の女子付属校。理数SクラスやA特進クラスを設置。日本大学各学部への高い進学率とともに、面倒見の良い女子教育を展開。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.buzan-joshi.hs.nihon-u.ac.jp/"}, {"id": "p-teikyo-university", "name": "帝京大学高等学校", "short_name": "帝京大高", "type": "shiritsu", "gender": "共学", "deviation": 67, "deviation_range": "66-68", "area": "多摩西部", "category": "難関進学校", "station": "京王線 高幡不動駅 スクールバス12分 / 京王・小田急多摩センター駅 スクールバス15分", "commute_time": 22, "commute_route": "聖蹟桜ヶ丘 →(京王線特急5分)→ 高幡不動駅 ＋直通スクールバス12分 ［計約20〜23分］", "features": "聖蹟桜ヶ丘からわずか20分強で通える多摩南部の難関私立進学校。帝京大学の系列ながら実質は超進学校で、東大をはじめとする難関国公立・国公立医学部・早慶上理へ多数の合格者を輩出。手厚い個別指導。", "exam_type": "一般（3教科） / 推薦（高内申基準＋適性・面接）", "url": "https://www.teikyo-u.ed.jp/"}, {"id": "p-takushoku-daiichi", "name": "拓殖大学第一高等学校", "short_name": "拓大一高", "type": "shiritsu", "gender": "共学", "deviation": 67, "deviation_range": "61-67", "area": "多摩北部", "category": "大学付属・進学", "station": "多摩都市モノレール・西武拝島線 玉川上水駅 徒歩3分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急5分)→ 高幡不動 →(多摩モノレール20分)→ 玉川上水駅 ＋徒歩3分 ［計約30〜33分］", "features": "多摩モノレール玉川上水駅すぐ。「特進コース（偏差値67）」と「進学コース（偏差値61）」を設置。拓大推薦枠を保険に持ちつつ、特進を中心に難関国公立・早慶上理・GMARCHへ合格者を多数輩出する人気校。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.takuichi.ed.jp/"}, {"id": "p-senshu-fuzoku", "name": "専修大学附属高等学校", "short_name": "専大附", "type": "shiritsu", "gender": "共学", "deviation": 62, "deviation_range": "61-63", "area": "23区西部", "category": "大学付属・進学", "station": "東京メトロ丸ノ内線 方南町駅 徒歩10分 / 京王井の頭線 永福町駅 徒歩15分", "commute_time": 36, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停2分)→ 永福町駅 ＋徒歩15分 ［計約36分］", "features": "杉並区の落ち着いた環境。専修大学への推薦進学率が約85〜90%。部活動や学校行事が盛んで明るく伸びやかな校風。他大学進学コースも設置。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.senshu-u-h.ed.jp/"}, {"id": "p-komazawa-university", "name": "駒澤大学高等学校", "short_name": "駒大高", "type": "shiritsu", "gender": "共学", "deviation": 60, "deviation_range": "59-61", "area": "23区西部", "category": "大学付属・進学", "station": "東急田園都市線 桜新町駅 徒歩15分 / 用賀駅 徒歩13分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線22分)→ 武蔵溝ノ口 →(東急田園都市線5分)→ 用賀駅 ＋徒歩13分 ［計約44分］", "features": "全国屈指のサッカー部や吹奏楽部など部活動が超名門。駒澤大学への推薦枠（約70%進学）を持ちつつ、明るく元気な生徒が集まる活気ある学校。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.komazawa.ed.jp/"}, {"id": "p-toyo-keihoku", "name": "東洋大学京北高等学校", "short_name": "東洋大京北", "type": "shiritsu", "gender": "共学", "deviation": 61, "deviation_range": "60-62", "area": "都心", "category": "大学付属・進学", "station": "都営三田線 白山駅 徒歩6分 / 東京メトロ南北線 本駒込駅 徒歩10分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(都営新宿線)→ 神保町 →(都営三田線8分)→ 白山駅 ＋徒歩6分 ［計約48分］", "features": "文京区白山の最新設備が揃うキャンパス。東洋大学への優先推薦枠を保持しながら、国公立・早慶上理・GMARCHを目指せるカリキュラム。哲学教育を基盤とした確かな人間形成。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.toyo.ac.jp/keihoku/shs/"}, {"id": "p-tamagawa-gakuen", "name": "玉川学園高等部", "short_name": "玉川学園", "type": "shiritsu", "gender": "共学", "deviation": 62, "deviation_range": "60-63", "area": "多摩南部", "category": "大学付属・進学", "station": "小田急小田原線 玉川学園前駅 徒歩5分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線)→ 登戸 →(小田急線13分)→ 玉川学園前駅 ＋徒歩5分 ［計約38分］", "features": "広大な自然と最先端の教育設備。国際バカロレア（IB）ディプロマプログラムやSSH指定など先進的な探究教育。玉川大学への進学および国内外の難関大学進学に対応。", "exam_type": "一般（3教科） / 推薦・IB入試", "url": "https://www.tamagawa.jp/academy/upper_arg/"}, {"id": "p-obirin", "name": "桜美林高等学校", "short_name": "桜美林", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "60-65", "area": "多摩南部", "category": "大学付属・進学", "station": "JR横浜線 淵野辺駅 スクールバス8分(徒歩20分)", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(相模原線15分)→ 橋本 →(横浜線5分)→ 淵野辺駅 ＋スクールバス8分 ［計約40分］", "features": "キリスト教に基づく国際理解教育。「選抜クラス（偏差値65）」と「進学クラス（偏差値60）」を設置。桜美林大学への推薦を確保しながら国公立大・早慶上理・GMARCHへ多数進学。英語教育と留学制度が充実。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.obirin.ed.jp/koutou/"}, {"id": "p-myojo", "name": "明星高等学校", "short_name": "明星", "type": "shiritsu", "gender": "共学", "deviation": 59, "deviation_range": "58-60", "area": "多摩南部", "category": "中堅進学校", "station": "JR武蔵野線 北府中駅 徒歩15分 / JR中央線 国分寺駅 バス10分 / 京王線 府中駅 バス10分", "commute_time": 20, "commute_route": "聖蹟桜ヶ丘駅からバス直通(寺91系統・明星学苑経由国分寺駅南口行 約18分「明星学苑」下車すぐ) ［計約20分］", "features": "聖蹟桜ヶ丘駅から直通バスですぐの好アクセス。広大で緑豊かなキャンパス。「MGS（特進クラス）」と「本土（進学クラス）」を設置し、手厚い学習指導でGMARCH・成成明学などへ着実な合格実績を誇る。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.meisei.ac.jp/hs/"}, {"id": "p-kaisei", "name": "開成高等学校", "short_name": "開成", "type": "shiritsu", "gender": "男子校", "deviation": 77, "deviation_range": "76-78", "area": "23区北部", "category": "超難関進学校", "station": "JR山手線・京浜東北線・日暮里舎人ライナー 西日暮里駅 徒歩2分 / 東京メトロ千代田線 徒歩2分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR山手線18分)→ 西日暮里駅 ＋徒歩2分 ［計約48〜50分］", "features": "東京大学合格者数40年以上連続日本一の金字塔を誇る超進学校。高校から約100名の外部募集（新高生）を実施。ペン剣の精神、自主自律、運動会をはじめ生徒主体の圧倒的なエネルギーと探究心にあふれる学舎。", "exam_type": "一般（5教科：国・数・英・理・社）", "url": "https://kaiseigakuen.jp/"}, {"id": "p-sugamo", "name": "巣鴨高等学校", "short_name": "巣鴨", "type": "shiritsu", "gender": "男子校", "deviation": 72, "deviation_range": "71-73", "area": "都心", "category": "難関進学校", "station": "JR山手線・都営三田線 巣鴨駅 徒歩10分 / JR山手線 大塚駅 徒歩10分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR山手線11分)→ 大塚駅 ＋徒歩10分 ［計約48分］", "features": "「硬教育」を掲げる名門男子校。高校募集を実施。東大・国公立大学医学部に抜群の進学実績を誇る。早朝寒稽古など精神修養の伝統行事と、最先端の理数・国際教育が共存。", "exam_type": "一般（国・数・英） / 推薦", "url": "https://www.sugamo.ed.jp/"}, {"id": "p-johoku", "name": "城北高等学校", "short_name": "城北", "type": "shiritsu", "gender": "男子校", "deviation": 71, "deviation_range": "70-72", "area": "23区北部", "category": "難関進学校", "station": "東武東上線 上板橋駅 徒歩12分 / 東京メトロ有楽町線・副都心線 小竹向原駅 徒歩20分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿三丁目 →(メトロ副都心線13分)→ 小竹向原駅 ＋徒歩20分(または池袋乗換東武東上線上板橋駅徒歩12分) ［計約48〜52分］", "features": "難関国立大・医学部・早慶上理に多数の合格者を輩出する名門男子校。広大な敷地に恵まれた学習・部活動環境。人間味あふれる「着実・勤勉・自主」の教育。", "exam_type": "一般（国・数・英） / 推薦", "url": "https://www.johoku.ac.jp/"}, {"id": "p-toho", "name": "桐朋高等学校", "short_name": "桐朋", "type": "shiritsu", "gender": "男子校", "deviation": 71, "deviation_range": "70-72", "area": "多摩南部", "category": "難関進学校", "station": "JR南武線 谷保駅 徒歩15分 / JR中央線 国立駅 徒歩15分", "commute_time": 25, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(JR南武線4分)→ 谷保駅 ＋徒歩15分 ［計約25分］ ※聖蹟桜ヶ丘駅から国立駅行バス利用可", "features": "多摩地区を代表する自由闊達な名門男子校。緑豊かな国立の地にあり、自主自律を徹底。東大・京大・難関国公立大・医学部に高い実績を誇りながら、探究活動や行事にも熱中する校風。", "exam_type": "一般（国・数・英・理・社） / 推薦", "url": "https://www.toho.ed.jp/"}, {"id": "p-icu-high", "name": "国際基督教大学高等学校（ICU）", "short_name": "ICU高校", "type": "shiritsu", "gender": "共学", "deviation": 72, "deviation_range": "71-73", "area": "多摩北部", "category": "難関進学校", "station": "JR中央線 武蔵境駅 南口バス12分 / 武蔵小金井駅 南口バス15分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線11分)→ 立川 →(中央線12分)→ 武蔵境駅 ＋南口バス12分 ［計約38〜40分］", "features": "生徒の約3分の2が帰国生という日本屈指の国際教育校。ICUキャンパスに隣接。多様な言語・文化を尊重する自由な校風。ICU推薦枠のほか、東大・難関国立・早慶上智・海外大への進学実績が豊富。", "exam_type": "一般（3教科） / 推薦・帰国生選抜", "url": "https://hosp.icu.ac.jp/"}, {"id": "p-kinjo", "name": "錦城高等学校", "short_name": "錦城", "type": "shiritsu", "gender": "共学", "deviation": 69, "deviation_range": "65-69", "area": "多摩北部", "category": "難関進学校", "station": "西武新宿線 小平駅 / 花小金井駅 バス / JR中央線 武蔵小金井駅 バス", "commute_time": 36, "commute_route": "聖蹟桜ヶ丘 →(京王線特急6分)→ 府中駅 ＋バスで武蔵小金井駅経由・西武バス ［計約35〜40分］", "features": "多摩地区の高校受験生に絶大な人気を誇る進学校。「特進コース（偏差値69）」と「進学コース（偏差値65）」を設置。手厚い補習体制と高い進学指導力で、国公立大学や早慶上理・GMARCHへ毎年多数の現役合格者を送り出す。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.kinjo-highschool.ed.jp/"}, {"id": "p-soka", "name": "創価高等学校", "short_name": "創価", "type": "shiritsu", "gender": "共学", "deviation": 69, "deviation_range": "68-70", "area": "多摩北部", "category": "難関進学校", "station": "西武国分寺線 鷹の台駅 徒歩20分 / 西武拝島線 小川駅 徒歩15分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線・武蔵野線)→ 新小平/鷹の台駅 ［計約40〜42分］", "features": "人間教育を掲げる名門進学校。東大・京大など難関国公立大学や創価大学、海外名門大学へ多数の合格者を輩出。充実した学術・芸術施設と豊かな自然。", "exam_type": "一般（3教科） / 推薦", "url": "https://www.tokyo.soka.ed.jp/"}, {"id": "p-hoyu-gakuin", "name": "朋優学院高等学校", "short_name": "朋優学院", "type": "shiritsu", "gender": "共学", "deviation": 67, "deviation_range": "64-68", "area": "23区南部", "category": "難関進学校", "station": "都営浅草線・東急大井町線 中延駅 徒歩8分 / JR横須賀線 西大井駅 徒歩8分", "commute_time": 44, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線26分)→ 武蔵小杉 →(JR横須賀線5分)→ 西大井駅 ＋徒歩8分 ［計約44分］", "features": "近年首都圏で最も進学実績を伸ばし話題沸騰の共学校。「国公立TGコース（偏差値68）」「国公立・早慶特進AGコース」を設置。東大をはじめ難関国公立大学や早慶上理への合格実績が急伸。", "exam_type": "一般（3教科） / 併願優遇（模試成績・内申基準）", "url": "https://www.hoyu.ed.jp/"}, {"id": "p-seiryo", "name": "青稜高等学校", "short_name": "青稜", "type": "shiritsu", "gender": "共学", "deviation": 64, "deviation_range": "63-65", "area": "23区南部", "category": "中堅進学校", "station": "東急大井町線 下神明駅 徒歩1分 / JR・りんかい線 大井町駅 徒歩7分", "commute_time": 46, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線26分)→ 武蔵小杉 →(JR横須賀線5分)→ 西大井駅 ＋徒歩8分 ［計約45分］", "features": "下神明駅徒歩1分の好立地。「S-Project」など面倒見の良い学習指導と自習環境。生徒の主体的な挑戦を支え、国公立大学やGMARCHへの高い進学実績を達成。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.seiryo-js.ed.jp/"}, {"id": "p-shukutoku", "name": "淑徳高等学校", "short_name": "淑徳", "type": "shiritsu", "gender": "共学", "deviation": 69, "deviation_range": "64-69", "area": "23区北部", "category": "難関進学校", "station": "東武東上線 ときわ台駅 徒歩12分 / 都営三田線 志村三丁目駅 徒歩18分", "commute_time": 50, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR埼京線5分)→ 池袋 →(東武東上線8分)→ ときわ台駅 ＋徒歩12分 ［計約52分］", "features": "「スーパー特進コース（偏差値69）」「特進選抜コース」を設置。仏教精神に基づく温かい人間教育とハイレベルな受験指導。東大・難関国立・難関私大への合格実績が極めて堅調。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.shukutoku.ed.jp/"}, {"id": "p-shukutoku-sugamo", "name": "淑徳巣鴨高等学校", "short_name": "淑徳巣鴨", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "58-65", "area": "都心", "category": "中堅進学校", "station": "都営三田線 西巣鴨駅 徒歩3分 / JR埼京線 板橋駅 徒歩10分", "commute_time": 48, "commute_route": "聖蹟桜ヶ丘 →(京王線特急28分)→ 新宿 →(JR埼京線9分)→ 板橋駅 ＋徒歩10分 ［計約48分］", "features": "西巣鴨駅徒歩3分。「プレミアム特進コース」「特進コース」など。「おかげさま」の心を育てる教育と、熱心な受験指導により国公立・早慶上理・GMARCHへの合格者が急増。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.shukutoku.sugamo.tokyo.jp/"}, {"id": "p-junten", "name": "順天高等学校", "short_name": "順天", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "61-65", "area": "23区北部", "category": "中堅進学校", "station": "JR京浜東北線・東京メトロ南北線 王子駅 徒歩3分", "commute_time": 50, "commute_route": "聖蹟桜ヶ丘 → 新宿 →(山手線)→ 田端 →(京浜東北線4分)→ 王子駅 ＋徒歩3分 ［計約50分］", "features": "王子駅徒歩3分。SGH（スーパーグローバルハイスクール）指定経験を生かした先進的探究学習と英語教育。国公立大学や難関私大への進学実績が堅調。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.junten.ed.jp/"}, {"id": "p-toyo-high", "name": "東洋高等学校", "short_name": "東洋高校", "type": "shiritsu", "gender": "共学", "deviation": 66, "deviation_range": "60-66", "area": "都心", "category": "中堅進学校", "station": "JR総武線 水道橋駅 徒歩2分 / 都営三田線 水道橋駅 徒歩3分 / 神保町駅 徒歩8分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急26分)→ 笹塚 →(都営新宿線12分)→ 神保町駅 ＋徒歩8分(または水道橋駅徒歩2分) ［計約42分］", "features": "水道橋駅前・東京ドーム至近の好立地。「特進選抜コース（偏差値66）」「特進コース」を設置。熱意あふれる教員陣と手厚い講習体制で国公立大・早慶上理・GMARCHへ合格者を多数輩出。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.toyo.ed.jp/"}, {"id": "p-hachioji-gakuen", "name": "八王子学園八王子高等学校", "short_name": "八王子学園", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "58-68", "area": "多摩西部", "category": "中堅進学校", "station": "JR中央線 西八王子駅 徒歩15分 / 京王線 めじろ台駅 バス8分(徒歩20分)", "commute_time": 25, "commute_route": "聖蹟桜ヶ丘 →(京王線特急12分)→ めじろ台駅 ＋徒歩20分(または京王八王子乗換・西八王子駅徒歩15分) ［計約25〜30分］", "features": "聖蹟桜ヶ丘から約25分のアクセス。「東大・医進クラス（偏差値68）」「特進クラス」「進学クラス」の習熟度別コース制。バスケ部など全国トップの運動部と手厚い大学進学指導が両立。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.hachioji.ed.jp/"}, {"id": "p-eimeikan", "name": "穎明館高等学校", "short_name": "穎明館", "type": "shiritsu", "gender": "共学", "deviation": 64, "deviation_range": "63-65", "area": "多摩西部", "category": "難関進学校", "station": "JR中央線・京王高尾線 高尾駅 南口スクールバス15分", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急22分)→ 高尾駅 ＋直通スクールバス15分 ［計約38分］", "features": "多摩丘陵の広大で美しいキャンパス。手厚い個別進路指導と高い知性を育むカリキュラム。東大をはじめとする国公立大学や難関私大に手堅い合格実績を誇る。", "exam_type": "一般（3教科） / 推薦", "url": "https://www.emk.ac.jp/"}, {"id": "p-tokyo-denki-univ", "name": "東京電機大学高等学校", "short_name": "電大高", "type": "shiritsu", "gender": "共学", "deviation": 58, "deviation_range": "57-59", "area": "多摩北部", "category": "大学付属・進学", "station": "JR中央線 東小金井駅 徒歩5分 / 西武多摩川線 新小金井駅 徒歩12分", "commute_time": 30, "commute_route": "聖蹟桜ヶ丘 →(京王線特急6分)→ 府中駅 ＋バス15分東小金井駅 ［計約30分］ または分倍河原・立川乗換東小金井駅徒歩5分", "features": "理数・STEM教育に圧倒的な強み。東京電機大学への推薦枠を保持しながら、国公立大学や難関私大理工系学部への進学実績が豊富。探究心豊かな理系生徒に大人気の学校。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.dendai.ed.jp/"}, {"id": "p-seitoku-gakuen", "name": "聖徳学園高等学校", "short_name": "聖徳学園", "type": "shiritsu", "gender": "共学", "deviation": 62, "deviation_range": "58-62", "area": "多摩北部", "category": "中堅進学校", "station": "JR中央線・西武多摩川線 武蔵境駅 徒歩3分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線11分)→ 立川 →(中央線12分)→ 武蔵境駅 ＋徒歩3分 ［計約32分］", "features": "武蔵境駅徒歩3分。最先端のSTEAM教育やiPadを活用したICT教育で全国的に注目を集める共学校。「難関国立・私大特進コース」など進路に応じた指導で大学進学実績も急上昇中。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.shotoku.ed.jp/"}, {"id": "p-suginami-gakuin", "name": "杉並学院高等学校", "short_name": "杉並学院", "type": "shiritsu", "gender": "共学", "deviation": 62, "deviation_range": "56-62", "area": "23区西部", "category": "中堅進学校", "station": "JR中央線・総武線 阿佐ケ谷駅 徒歩8分 / 東京メトロ丸ノ内線 南阿佐ケ谷駅 徒歩10分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線急行9分)→ 吉祥寺 →(中央線快速7分)→ 阿佐ケ谷駅 ＋徒歩8分 ［計約44分］", "features": "「特別進学コース（偏差値62）」と「総合進学コース（偏差値56）」を設置。ゴルフ部など著名な部活動と、丁寧な学習サポートによるGMARCH・成成明学への手堅い進学実績。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.suginami.ed.jp/"}, {"id": "p-kosei-gakuen", "name": "佼成学園高等学校", "short_name": "佼成学園", "type": "shiritsu", "gender": "男子校", "deviation": 62, "deviation_range": "56-62", "area": "23区西部", "category": "中堅進学校", "station": "東京メトロ丸ノ内線 方南町駅 徒歩5分", "commute_time": 36, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停2分)→ 永福町 →(バス5分/徒歩15分) 方南町駅 ［計約36分］", "features": "男子中高一貫・高校募集あり進学校。全国大会優勝を誇るアメリカンフットボール部をはじめ運動部が強豪。「特別進学コース」を設置し難関大進学も手厚い。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.kosei.ac.jp/boys/"}, {"id": "p-komaba-gakuen", "name": "駒場学園高等学校", "short_name": "駒場学園", "type": "shiritsu", "gender": "共学", "deviation": 57, "deviation_range": "48-57", "area": "23区西部", "category": "中堅進学校", "station": "京王井の頭線 池ノ上駅 徒歩10分 / 小田急線 東北沢駅 徒歩10分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急20分)→ 明大前 →(井の頭線各停4分)→ 池ノ上駅 ＋徒歩10分 ［計約34分］", "features": "世田谷区代沢の閑静な住宅街に位置。「特別進学コース（偏差値57）」と「進学コース」「食物調理科」を併設。アットホームな校風で中堅私大への進学も手堅い。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.komabagakuen.ac.jp/"}, {"id": "p-taisei", "name": "大成高等学校", "short_name": "大成", "type": "shiritsu", "gender": "共学", "deviation": 56, "deviation_range": "50-56", "area": "多摩北部", "category": "中堅進学校", "station": "JR中央線 三鷹駅 バス10分 / 京王線 調布駅 北口バス20分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布駅 ＋北口バス20分(または三鷹駅経由バス) ［計約32〜35分］", "features": "三鷹市の閑静な住宅街に位置。「特別進学コース（偏差値56）」「文理進学コース」を設置。放課後補習や手厚い進路指導により日東駒専・GMARCHへの合格者数が増加中。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.taisei.ed.jp/"}, {"id": "p-showa-daiichi-gakuen", "name": "昭和第一学園高等学校", "short_name": "昭和第一学園", "type": "shiritsu", "gender": "共学", "deviation": 56, "deviation_range": "48-56", "area": "多摩北部", "category": "中堅進学校", "station": "JR中央線 立川駅 北口バス10分 / 西武拝島線 西武立川駅 徒歩15分", "commute_time": 32, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線11分)→ 立川駅 ＋北口バス10分 ［計約30〜33分］", "features": "立川駅からバス10分の広大な敷地。「特別進学コース（偏差値56）」「選抜進学コース」「総合進学コース」「工学科」を設置。多様な進路希望に対応し、指定校推薦枠も豊富。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://www.sdg.ed.jp/"}, {"id": "p-kogakuin-univ", "name": "工学院大学附属高等学校", "short_name": "工学院大附", "type": "shiritsu", "gender": "共学", "deviation": 62, "deviation_range": "55-62", "area": "多摩西部", "category": "大学付属・進学", "station": "JR中央線 八王子駅 / 京王線 京王八王子駅 スクールバス20分 / 拝島駅 スクールバス", "commute_time": 38, "commute_route": "聖蹟桜ヶ丘 →(京王線特急15分)→ 京王八王子駅 ＋専用スクールバス20分 ［計約38分］", "features": "工学院大学八王子キャンパスに隣接。「先進コース（偏差値62）」「文理コース」を設置。最先端のSTEAM・サイエンス教育と探究学習を展開。工学院大学への推薦のほか他大進学も多数。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.js.kogakuin.ac.jp/"}, {"id": "p-shirame-gakuen", "name": "白梅学園高等学校", "short_name": "白梅学園", "type": "shiritsu", "gender": "女子校", "deviation": 58, "deviation_range": "50-58", "area": "多摩北部", "category": "中堅進学校", "station": "西武国分寺線 鷹の台駅 徒歩15分", "commute_time": 40, "commute_route": "聖蹟桜ヶ丘 → 分倍河原 →(南武線・武蔵野線)→ 新小平/鷹の台駅 ＋徒歩15分 ［計約40分］", "features": "緑に囲まれた小平の女子校。「特別選抜コース（偏差値58）」「選抜コース」「進学コース」を設置。ハンドボール部など部活動が盛んで、面倒見の良い女子教育を展開。", "exam_type": "一般（3教科） / 単願推薦・併願優遇（内申基準あり）", "url": "https://hs.shiraume.ac.jp/"}, {"id": "p-toko-gakuen", "name": "桐光学園高等学校", "short_name": "桐光学園", "type": "shiritsu", "gender": "共学", "deviation": 68, "deviation_range": "65-68", "area": "神奈川", "category": "難関進学校", "station": "小田急多摩線 栗平駅 徒歩15分 / 京王相模原線 若葉台駅 バス10分", "commute_time": 30, "commute_route": "聖蹟桜ヶ丘駅より多摩センター経由小田急多摩線・栗平駅 徒歩15分 (または若葉台駅から路線バス10分) ［計約30〜33分］", "features": "神奈川県川崎市麻生区にあり聖蹟桜ヶ丘から好通学圏。男女別学校舎（授業は別・行事は合同）。東大をはじめ国公立大学・難関私立大学へ毎年多数の現役合格者を輩出する屈指の進学校。サッカー部や野球部も全国トップレベル。", "exam_type": "一般（3教科） / 推薦・併願（内申基準あり）", "url": "https://www.toko.ed.jp/"}, {"id": "p-toin-gakuen", "name": "桐蔭学園高等学校", "short_name": "桐蔭学園", "type": "shiritsu", "gender": "共学", "deviation": 65, "deviation_range": "60-65", "area": "神奈川", "category": "中堅進学校", "station": "東急田園都市線 青葉台駅・市が尾駅 バス / 小田急線 柿生駅 バス15分", "commute_time": 42, "commute_route": "聖蹟桜ヶ丘 →(京王線特急4分)→ 分倍河原 →(南武線14分)→ 登戸 →(小田急線10分)→ 柿生駅 ＋バス15分 ［計約43分］", "features": "広大なキャンパスに「プログレス（難関国公立）」「アドバンス（国公立・早慶上理）」「スタンダード」の3コースを展開。アクティブラーニングを導入し、文武両道を実践。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://toin.ac.jp/high/"}, {"id": "p-azabu-fuzoku", "name": "麻布大学附属高等学校", "short_name": "麻布大附", "type": "shiritsu", "gender": "共学", "deviation": 58, "deviation_range": "50-58", "area": "神奈川", "category": "大学付属・進学", "station": "JR横浜線 矢部駅 徒歩5分", "commute_time": 36, "commute_route": "聖蹟桜ヶ丘 →(京王線特急10分)→ 調布 →(相模原線15分)→ 橋本 →(横浜線3分)→ 矢部駅 ＋徒歩5分 ［計約36分］", "features": "駅徒歩5分。麻布大学（獣医学部・生命環境学部）に隣接し内部推薦枠あり。「S特進」「特進」「進学」の3コース制。理科教育や体験学習に強みを持つ。", "exam_type": "一般（3教科） / 推薦・併願優遇（内申基準あり）", "url": "https://www.azabu-h.ed.jp/"}];
+
+let currentTab = 'all'; // 'all', 'toritsu', 'shiritsu', 'starred', 'matrix', 'guide'
+let currentGender = 'all';
+let currentSort = 'dev-desc';
+let currentViewMode = window.innerWidth <= 768 ? 'card' : 'table';
+let activeQuickChips = new Set();
+let starredSchoolIds = new Set();
+
+// Load Starred Schools from localStorage
+try {
+  const saved = localStorage.getItem('starred_highschools');
+  if (saved) {
+    starredSchoolIds = new Set(JSON.parse(saved));
+  }
+} catch (e) {
+  console.log('localStorage not accessible, using in-memory set');
+}
+
+function saveStarred() {
+  try {
+    localStorage.setItem('starred_highschools', JSON.stringify([...starredSchoolIds]));
+  } catch (e) {}
+  updateStarredBadge();
+}
+
+function toggleStar(schoolId, event) {
+  if (event) event.stopPropagation();
+  if (starredSchoolIds.has(schoolId)) {
+    starredSchoolIds.delete(schoolId);
+  } else {
+    starredSchoolIds.add(schoolId);
+  }
+  saveStarred();
+  applyFilters();
+}
+
+function updateStarredBadge() {
+  const badge = document.getElementById('tab-count-starred');
+  if (badge) badge.textContent = starredSchoolIds.size;
+}
+
+function getAllSchools() {
+  return [...toritsuSchools, ...shiritsuSchools];
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('tab-count-all').textContent = getAllSchools().length;
+  document.getElementById('tab-count-toritsu').textContent = toritsuSchools.length;
+  document.getElementById('tab-count-shiritsu').textContent = shiritsuSchools.length;
+  updateStarredBadge();
+  calculateNaishin();
+  renderMatrix();
+  setViewMode(currentViewMode, false);
+  applyFilters();
+});
+
+// Toggle Mobile Filter Drawer
+function toggleFilterDrawer() {
+  const drawer = document.getElementById('filter-expandable');
+  drawer.classList.toggle('open');
+}
+
+// View Mode (Card vs Table)
+function setViewMode(mode, doRerender = true) {
+  currentViewMode = mode;
+  const btnCard = document.getElementById('btn-mode-card');
+  const btnTable = document.getElementById('btn-mode-table');
+  const cardsWrap = document.getElementById('schools-cards');
+  const tableWrap = document.getElementById('schools-table-wrap');
+
+  if (mode === 'card') {
+    btnCard.classList.add('active');
+    btnTable.classList.remove('active');
+    cardsWrap.style.display = 'grid';
+    tableWrap.style.display = 'none';
+  } else {
+    btnCard.classList.remove('active');
+    btnTable.classList.add('active');
+    cardsWrap.style.display = 'none';
+    tableWrap.style.display = 'block';
+  }
+
+  if (doRerender) applyFilters();
+}
+
+// Tab Switcher
+function switchMainTab(tab, btn) {
+  currentTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
+  const filterSection = document.getElementById('filter-section');
+  const listSection = document.getElementById('view-list-section');
+  const matrixSection = document.getElementById('view-matrix-section');
+  const guideSection = document.getElementById('view-guide-section');
+
+  if (tab === 'matrix') {
+    filterSection.style.display = 'none';
+    listSection.style.display = 'none';
+    matrixSection.style.display = 'block';
+    guideSection.style.display = 'none';
+  } else if (tab === 'guide') {
+    filterSection.style.display = 'none';
+    listSection.style.display = 'none';
+    matrixSection.style.display = 'none';
+    guideSection.style.display = 'block';
+  } else {
+    filterSection.style.display = 'block';
+    listSection.style.display = 'block';
+    matrixSection.style.display = 'none';
+    guideSection.style.display = 'none';
+    applyFilters();
+  }
+}
+
+// Quick Filter Chips
+function toggleQuickChip(chipType, btn) {
+  btn.classList.toggle('active');
+  if (activeQuickChips.has(chipType)) {
+    activeQuickChips.delete(chipType);
+  } else {
+    activeQuickChips.add(chipType);
+  }
+  applyFilters();
+}
+
+// Sliders and Selects
+function updateCommuteLabel() {
+  const val = document.getElementById('filter-commute').value;
+  const badge = document.getElementById('val-commute');
+  if (val >= 75) {
+    badge.textContent = '全範囲（上限なし）';
+  } else {
+    badge.textContent = `${val}分 以内`;
+  }
+}
+
+function updateDeviationLabel() {
+  const val = document.getElementById('filter-deviation').value;
+  const badge = document.getElementById('val-deviation');
+  badge.textContent = `偏差値 ${val} 以上`;
+}
+
+function setGenderFilter(gender, btn) {
+  currentGender = gender;
+  document.querySelectorAll('.btn-group-segmented .seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function resetFilters() {
+  document.getElementById('filter-keyword').value = '';
+  document.getElementById('filter-commute').value = '75';
+  updateCommuteLabel();
+  document.getElementById('filter-deviation').value = '40';
+  updateDeviationLabel();
+  document.getElementById('filter-area').value = 'all';
+  document.getElementById('filter-category').value = 'all';
+  currentGender = 'all';
+  document.querySelectorAll('.btn-group-segmented .seg-btn').forEach(b => {
+    if (b.dataset.gender === 'all') b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+  activeQuickChips.clear();
+  document.getElementById('sort-select').value = 'dev-desc';
+  currentSort = 'dev-desc';
+  document.getElementById('filter-dot').classList.remove('show');
+  applyFilters();
+}
+
+function applyFilters() {
+  const keyword = document.getElementById('filter-keyword').value.trim().toLowerCase();
+  let maxCommute = parseInt(document.getElementById('filter-commute').value, 10);
+  let minDeviation = parseInt(document.getElementById('filter-deviation').value, 10);
+  const selectedArea = document.getElementById('filter-area').value;
+  const selectedCategory = document.getElementById('filter-category').value;
+
+  if (activeQuickChips.has('time-25')) maxCommute = Math.min(maxCommute, 25);
+  if (activeQuickChips.has('time-35')) maxCommute = Math.min(maxCommute, 35);
+  if (activeQuickChips.has('dev-70')) minDeviation = Math.max(minDeviation, 70);
+  if (activeQuickChips.has('dev-65')) minDeviation = Math.max(minDeviation, 65);
+
+  const isFilterActive = keyword !== '' || maxCommute < 75 || minDeviation > 40 || selectedArea !== 'all' || selectedCategory !== 'all' || currentGender !== 'all' || activeQuickChips.size > 0;
+  const dot = document.getElementById('filter-dot');
+  if (dot) {
+    if (isFilterActive) dot.classList.add('show');
+    else dot.classList.remove('show');
+  }
+
+  let baseSchools = [];
+  if (currentTab === 'all') baseSchools = getAllSchools();
+  else if (currentTab === 'toritsu') baseSchools = toritsuSchools;
+  else if (currentTab === 'shiritsu') baseSchools = shiritsuSchools;
+  else if (currentTab === 'starred') {
+    baseSchools = getAllSchools().filter(s => starredSchoolIds.has(s.id));
+  }
+
+  const filtered = baseSchools.filter(school => {
+    if (maxCommute < 75 && school.commute_time > maxCommute) return false;
+    if (school.deviation < minDeviation) return false;
+    if (selectedArea !== 'all' && school.area !== selectedArea) return false;
+    if (currentGender !== 'all' && school.gender !== currentGender) return false;
+
+    if (activeQuickChips.has('cat-fuzoku')) {
+      const isFuzoku = school.category.includes('付属');
+      if (!isFuzoku) return false;
+    }
+    if (activeQuickChips.has('cat-jukuten')) {
+      if (school.category !== '進学指導重点校') return false;
+    }
+
+    if (selectedCategory !== 'all') {
+      if (school.category !== selectedCategory) return false;
+    }
+
+    if (keyword) {
+      const matchText = `${school.name} ${school.station} ${school.features} ${school.commute_route} ${school.category} ${school.exam_type}`.toLowerCase();
+      if (!matchText.includes(keyword)) return false;
+    }
+
+    return true;
+  });
+
+  sortSchools(filtered, currentSort);
+  renderSchools(filtered);
+}
+
+function sortSchools(list, sortKey) {
+  if (sortKey === 'dev-desc') {
+    list.sort((a, b) => b.deviation - a.deviation || a.commute_time - b.commute_time);
+  } else if (sortKey === 'dev-asc') {
+    list.sort((a, b) => a.deviation - b.deviation || a.commute_time - b.commute_time);
+  } else if (sortKey === 'time-asc') {
+    list.sort((a, b) => a.commute_time - b.commute_time || b.deviation - a.deviation);
+  } else if (sortKey === 'time-desc') {
+    list.sort((a, b) => b.commute_time - a.commute_time || b.deviation - a.deviation);
+  } else if (sortKey === 'name-asc') {
+    // short_name drops the "都立/私立" prefix so the two types interleave
+    list.sort((a, b) => a.short_name.localeCompare(b.short_name, 'ja'));
+  }
+}
+
+function applySorting() {
+  currentSort = document.getElementById('sort-select').value;
+  applyFilters();
+}
+
+function toggleSort(type) {
+  const select = document.getElementById('sort-select');
+  if (type === 'dev') {
+    currentSort = currentSort === 'dev-desc' ? 'dev-asc' : 'dev-desc';
+  } else if (type === 'time') {
+    currentSort = currentSort === 'time-asc' ? 'time-desc' : 'time-asc';
+  } else if (type === 'name') {
+    currentSort = 'name-asc';
+  }
+  select.value = currentSort;
+  applyFilters();
+}
+
+function getDevBadgeClass(dev) {
+  if (dev >= 74) return 'dev-75plus';
+  if (dev >= 70) return 'dev-70plus';
+  if (dev >= 65) return 'dev-65plus';
+  if (dev >= 60) return 'dev-60plus';
+  if (dev >= 50) return 'dev-50plus';
+  return 'dev-sub50';
+}
+
+function getTimeColorClass(mins) {
+  if (mins <= 25) return 'time-superfast';
+  if (mins <= 35) return 'time-fast';
+  if (mins <= 50) return 'time-normal';
+  return 'time-long';
+}
+
+function renderSchools(schools) {
+  document.getElementById('visible-count').textContent = schools.length;
+  renderCards(schools);
+  renderTable(schools);
+}
+
+function renderCards(schools) {
+  const container = document.getElementById('schools-cards');
+  if (schools.length === 0) {
+    if (currentTab === 'starred') {
+      container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: #94a3b8; font-weight: 700;">まだ気になる学校が登録されていません。<br>学校カード右上の「☆」を押すとここに保存できます！</div>`;
+    } else {
+      container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: #94a3b8; font-weight: 700;">条件に一致する高校が見つかりませんでした。絞り込みを緩めてみてください。</div>`;
+    }
+    return;
+  }
+
+  let html = '';
+  schools.forEach((s) => {
+    const typeBadge = s.type === 'toritsu' 
+      ? '<span class="type-pill pill-toritsu">都立</span>'
+      : '<span class="type-pill pill-shiritsu">私立</span>';
+    
+    const genderBadge = s.gender === '共学'
+      ? '<span class="pill-category">共学</span>'
+      : `<span class="pill-category" style="color: #9333ea; background: #faf5ff;">${s.gender}</span>`;
+
+    const devClass = getDevBadgeClass(s.deviation);
+    const timeClass = getTimeColorClass(s.commute_time);
+    const isStarred = starredSchoolIds.has(s.id);
+    const starIcon = isStarred ? '★' : '☆';
+    const starClass = isStarred ? 'starred' : '';
+
+    html += `
+      <div class="school-card" onclick="openSchoolModal('${s.id}')">
+        <div class="card-top-row">
+          ${typeBadge}
+          ${genderBadge}
+          <span class="pill-category">${s.category}</span>
+          <span style="font-size: 0.72rem; color: #64748b;">${s.area}</span>
+          <button class="star-btn ${starClass}" onclick="toggleStar('${s.id}', event)" title="気になるリストに保存">${starIcon}</button>
+        </div>
+
+        <div class="card-title-row">
+          <h3 class="card-school-name">${s.name}</h3>
+          <div class="card-dev-badge ${devClass}">${s.deviation}</div>
+        </div>
+
+        <div class="card-meta-chips">
+          <div class="card-chip-row">
+            <span class="chip-icon">⏱️</span>
+            <span style="font-size: 0.8rem; color: #64748b;">聖蹟桜ヶ丘から:</span>
+            <span class="card-commute-highlight ${timeClass}">約 ${s.commute_time} 分</span>
+          </div>
+          <div class="card-chip-row">
+            <span class="chip-icon">🚇</span>
+            <span class="card-station-text">${s.station}</span>
+          </div>
+        </div>
+
+        ${s.naishin ? `<div class="card-naishin-row">📋 内申目安（9教科45点）<span>推薦 <strong>${s.naishin.suisen80 ?? '満点級'}</strong></span><span>一般 <strong>約${s.naishin.sonai80}</strong></span></div>` : ''}
+
+        <div class="card-features-snippet">
+          ${s.features}
+        </div>
+
+        <div class="card-bottom-row">
+          <span class="exam-badge">${s.exam_type}</span>
+          <span class="card-detail-hint">詳細を見る →</span>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function renderTable(schools) {
+  const tbody = document.getElementById('table-body');
+  if (schools.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="8"style="text-align: center; padding: 2.5rem; color: #94a3b8; font-weight: 700;">条件に一致する高校が見つかりませんでした。</td></tr>`;
+    return;
+  }
+
+  let html = '';
+  schools.forEach((s, idx) => {
+    const typeBadge = s.type === 'toritsu' 
+      ? '<span class="type-pill pill-toritsu">都立</span>'
+      : '<span class="type-pill pill-shiritsu">私立</span>';
+    
+    const genderBadge = s.gender === '共学'
+      ? '<span class="pill-category">共学</span>'
+      : `<span class="pill-category" style="color: #9333ea; background: #faf5ff;">${s.gender}</span>`;
+
+    const devClass = getDevBadgeClass(s.deviation);
+    const timeClass = getTimeColorClass(s.commute_time);
+    const isStarred = starredSchoolIds.has(s.id);
+    const starIcon = isStarred ? '★' : '☆';
+    const starClass = isStarred ? 'starred' : '';
+
+    html += `
+      <tr onclick="openSchoolModal('${s.id}')" style="cursor: pointer;">
+        <td style="text-align: center;">
+          <button class="star-btn ${starClass}" onclick="toggleStar('${s.id}', event)" style="font-size: 1.15rem;">${starIcon}</button>
+        </td>
+        <td style="text-align: center; font-weight: 700; color: #94a3b8;">${idx + 1}</td>
+        <td>
+          <div style="display: flex; gap: 0.35rem; align-items: center; margin-bottom: 0.2rem;">
+            ${typeBadge}
+            ${genderBadge}
+            <span style="font-weight: 800; font-size: 0.95rem; color: var(--text-main);">${s.name}</span>
+          </div>
+          <div style="font-size: 0.75rem; color: #64748b;">${s.category} ・ ${s.area}</div>
+        </td>
+        <td style="text-align: center;">
+          <span class="card-dev-badge ${devClass}" style="font-size: 1.1rem; padding: 0.25rem 0.5rem;">${s.deviation}</span>
+        </td>
+        <td>
+          ${s.naishin
+            ? `<div class="tbl-naishin"><span>推薦</span><strong>${s.naishin.suisen80 ?? '満点級'}</strong></div>
+               <div class="tbl-naishin"><span>一般</span><strong>約${s.naishin.sonai80}</strong></div>`
+            : '<span style="font-size: 0.72rem; color: #94a3b8;">私立は掲載なし</span>'}
+        </td>
+        <td>
+          <div style="font-weight: 900; font-size: 1rem;" class="${timeClass}">約 ${s.commute_time} 分</div>
+          <div style="font-size: 0.72rem; color: #64748b; line-height: 1.3;">${s.commute_route.length > 40 ? s.commute_route.slice(0, 40) + '…' : s.commute_route}</div>
+        </td>
+        <td style="font-size: 0.82rem; color: #334155;">
+          ${s.station}
+        </td>
+        <td style="font-size: 0.8rem; color: #334155; line-height: 1.45;">
+          <div style="margin-bottom: 0.25rem;"><span class="exam-badge">${s.exam_type}</span></div>
+          <div>${s.features.length > 75 ? s.features.slice(0, 75) + '…' : s.features}</div>
+        </td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+// Modal
+function openSchoolModal(schoolId) {
+  const school = getAllSchools().find(s => s.id === schoolId);
+  if (!school) return;
+
+  const isToritsu = school.type === 'toritsu';
+  const typePill = isToritsu 
+    ? '<span class="type-pill pill-toritsu" style="font-size: 0.85rem; padding: 0.2rem 0.6rem;">都立普通科</span>'
+    : '<span class="type-pill pill-shiritsu" style="font-size: 0.85rem; padding: 0.2rem 0.6rem;">私立高校（高入あり）</span>';
+
+  const isStarred = starredSchoolIds.has(school.id);
+  const starIcon = isStarred ? '★ 保存済み' : '☆ 気になるリストに追加';
+  const starStyle = isStarred 
+    ? 'background: #fef3c7; color: #b45309; border: 1.5px solid #fcd34d;' 
+    : 'background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1;';
+
+  const modalBody = document.getElementById('modal-body');
+  modalBody.innerHTML = `
+    <div style="margin-bottom: 0.85rem;">
+      <div style="display: flex; gap: 0.4rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
+        ${typePill}
+        <span class="pill-category" style="font-size: 0.8rem; font-weight: 700;">${school.gender}</span>
+        <span class="pill-category" style="font-size: 0.8rem; font-weight: 700;">${school.category}</span>
+        <span style="font-size: 0.78rem; color: #64748b; margin-left: auto;">${school.area}</span>
+      </div>
+      <h2 style="font-size: 1.35rem; font-weight: 900; color: #0f172a; line-height: 1.35; margin-bottom: 0.5rem;">
+        ${school.name}
+      </h2>
+      <button onclick="toggleStar('${school.id}'); openSchoolModal('${school.id}');" style="padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; ${starStyle}">
+        ${starIcon}
+      </button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.15rem;">
+      <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.75rem; text-align: center;">
+        <div style="font-size: 0.75rem; font-weight: 700; color: #64748b;">偏差値（Vもぎ基準）</div>
+        <div style="font-size: 1.8rem; font-weight: 900; color: var(--primary-light); line-height: 1.2;">${school.deviation}</div>
+        <div style="font-size: 0.7rem; color: #94a3b8;">目安: ${school.deviation_range}</div>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.75rem; text-align: center;">
+        <div style="font-size: 0.75rem; font-weight: 700; color: #64748b;">聖蹟桜ヶ丘から</div>
+        <div style="font-size: 1.8rem; font-weight: 900; color: #0284c7; line-height: 1.2;">約 ${school.commute_time}<span style="font-size: 0.9rem;">分</span></div>
+        <div style="font-size: 0.7rem; color: #94a3b8;">改札〜校門目安</div>
+      </div>
+    </div>
+
+    ${school.naishin ? renderNaishinBlock(school.naishin) : ''}
+
+    <div style="margin-bottom: 0.85rem;">
+      <h4 style="font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 0.3rem;">🚇 最寄り駅・アクセス</h4>
+      <p style="font-size: 0.84rem; color: #334155; line-height: 1.5; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.6rem;">
+        ${school.station}
+      </p>
+    </div>
+
+    <div style="margin-bottom: 0.85rem;">
+      <h4 style="font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 0.3rem;">🗺️ 聖蹟桜ヶ丘からの通学ルート詳細</h4>
+      <p style="font-size: 0.84rem; color: #1e3a8a; font-weight: 600; line-height: 1.55; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-sm); padding: 0.6rem;">
+        ${school.commute_route}
+      </p>
+    </div>
+
+    <div style="margin-bottom: 0.85rem;">
+      <h4 style="font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 0.3rem;">📝 入試形態・選抜情報</h4>
+      <p style="font-size: 0.82rem; color: #475569; line-height: 1.5; background: #faf5ff; border: 1px solid #f0abfc; border-radius: var(--radius-sm); padding: 0.6rem;">
+        ${school.exam_type}
+      </p>
+    </div>
+
+    <div style="margin-bottom: 1.15rem;">
+      <h4 style="font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 0.3rem;">🏫 特色・進学実績・校風</h4>
+      <p style="font-size: 0.84rem; color: #334155; line-height: 1.6; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.7rem;">
+        ${school.features}
+      </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 1rem;">
+      <a href="${school.url}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; background: var(--primary-light); color: #fff; padding: 0.7rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: var(--shadow-sm); text-align: center;">
+        高校の公式Webサイトを見る ↗
+      </a>
+    </div>
+  `;
+
+  document.getElementById('school-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+// Naishin targets (toritsu only)
+function renderNaishinBlock(n) {
+  const sui80 = n.suisen80 === null
+    ? '45<span class="nb-sub">（満点でも80%に届かない）</span>'
+    : `${n.suisen80}<span class="nb-sub"> / 45</span>`;
+  return `
+    <div class="naishin-block">
+      <h4>📋 中学の成績（9教科の評定合計）の目安</h4>
+      <div class="nb-grid">
+        <div class="nb-cell">
+          <div class="nb-label">推薦（合格可能性80%）</div>
+          <div class="nb-num">${sui80}</div>
+          <div class="nb-label">60%なら ${n.suisen60}</div>
+        </div>
+        <div class="nb-cell">
+          <div class="nb-label">一般（合格可能性80%）</div>
+          <div class="nb-num">約${n.sonai80}<span class="nb-sub"> / 45</span></div>
+          <div class="nb-label">換算内申 ${n.kansan80} / 65</div>
+        </div>
+      </div>
+      <p class="nb-note">
+        推薦は内申のほか面接・集団討論・作文で決まります。一般は当日の学力検査（700点）と内申（300点）の合計なので、内申が少し足りなくても当日点で逆転できます。
+        一般の「約」は、実技4教科を2倍にする換算内申を、全教科が同じ評定だった場合の9教科合計に直した値です（実技が得意なら少ない合計でも届きます）。
+        出典: 市進「高校受験ナビ」都立高校 合格のめやす（推薦は2026年春入試用、一般は2027年春入試用）。
+      </p>
+    </div>`;
+}
+
+// Commute Matrix (built from the data so it never drifts from the list)
+const MATRIX_TIERS = [
+  { cls: 'tier-1', title: '⚡ 25分以内（超至便ゾーン）', note: '部活・学習両立', min: 0, max: 25 },
+  { cls: 'tier-2', title: '🚆 26〜35分（通いやすい）', note: '井の頭・南武・中央線', min: 26, max: 35 },
+  { cls: 'tier-3', title: '🎒 36〜45分（都心・多摩広域）', note: '重点校・難関私立', min: 36, max: 45 },
+  { cls: 'tier-4', title: '🌟 46分以上（こだわり目標校）', note: '名門進学校', min: 46, max: Infinity },
+];
+
+function renderMatrix() {
+  const all = getAllSchools();
+  document.getElementById('matrix-container').innerHTML = MATRIX_TIERS.map(tier => {
+    const list = all
+      .filter(s => s.commute_time >= tier.min && s.commute_time <= tier.max)
+      .sort((a, b) => b.deviation - a.deviation || a.commute_time - b.commute_time);
+    const items = list.map(s => `
+          <li onclick="openSchoolModal('${s.id}')"><strong>${s.short_name} (${s.type === 'toritsu' ? '都立' : '私立'})</strong> <span>${s.commute_time}分 / 偏差値${s.deviation}</span></li>`).join('');
+    return `
+      <div class="matrix-box ${tier.cls}">
+        <div class="matrix-header">
+          <span>${tier.title}</span>
+          <span>${list.length}校</span>
+        </div>
+        <ul class="matrix-list">${items}
+        </ul>
+      </div>`;
+  }).join('');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModalDirect();
+});
+
+function closeModal(event) {
+  if (event.target.id === 'school-modal') {
+    closeModalDirect();
+  }
+}
+
+function closeModalDirect() {
+  document.getElementById('school-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Naishin Calculation
+function calculateNaishin() {
+  const g5 = Math.min(25, Math.max(5, parseInt(document.getElementById('calc-5').value, 10) || 5));
+  const g4 = Math.min(20, Math.max(4, parseInt(document.getElementById('calc-4').value, 10) || 4));
+
+  const totalConverted = g5 + (g4 * 2);
+  const converted300 = Math.round((totalConverted / 65) * 300);
+
+  document.getElementById('calc-result-naishin').innerHTML = `${totalConverted} <span style="font-size: 1rem; color: #64748b;">/ 65点</span>`;
+  document.getElementById('calc-result-converted').textContent = `入試換算点: ${converted300}点 / 300点満点`;
+
+  // Data-driven: which toritsu schools' 80% naishin targets this grade set meets
+  const sonai = g5 + g4;
+  const byDev = (a, b) => b.deviation - a.deviation;
+  const ippanOk = toritsuSchools.filter(s => s.naishin.kansan80 <= totalConverted).sort(byDev);
+  const suisenOk = toritsuSchools.filter(s => s.naishin.suisen80 !== null && s.naishin.suisen80 <= sonai).sort(byDev);
+  const top = list => list.slice(0, 4).map(s => s.short_name).join('・') + (list.length > 4 ? ' など' : '');
+  document.getElementById('calc-target-advice').innerHTML = `
+    9教科合計 <strong>${sonai}</strong> / 45<br>
+    推薦の80%目安に届く都立: <strong>${suisenOk.length}校</strong>${suisenOk.length ? '（' + top(suisenOk) + '）' : ''}<br>
+    一般の80%目安に届く都立: <strong>${ippanOk.length}校</strong>${ippanOk.length ? '（' + top(ippanOk) + '）' : ''}`;
+}
+</script>
+
+</body>
+</html>
