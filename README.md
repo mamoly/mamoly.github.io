@@ -8,3 +8,4 @@ One folder per page: `<folder>/index.html` is served at `https://mamoly.github.i
 |---|---|
 | highschool-navi | https://mamoly.github.io/highschool-navi/ (noindex) |
 | fx-btc-dashboard | https://mamoly.github.io/fx-btc-dashboard/ |
+| bangkok-trip | https://mamoly.github.io/bangkok-trip/ |
