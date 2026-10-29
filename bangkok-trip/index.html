@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok Trip Itinerary 🇹🇭</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --accent: #f59e0b;
+            --accent-green: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: white;
+            padding: 40px 20px 32px;
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .badge-trip {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .header h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 0.95rem;
+            opacity: 0.92;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: -16px auto 0;
+            padding: 0 16px;
+        }
+
+        /* Nav Tabs */
+        .tabs {
+            display: flex;
+            background: white;
+            padding: 6px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            gap: 4px;
+            position: sticky;
+            top: 12px;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px 8px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Day Card */
+        .day-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1.5px solid var(--border);
+        }
+
+        .day-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-tag {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .day-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .day-theme {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: #cbd5e1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 3.5px solid var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .timeline-dot.highlight {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px #fef3c7;
+        }
+
+        .timeline-dot.green {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px #d1fae5;
+        }
+
+        .timeline-time {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+            display: inline-block;
+        }
+
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .timeline-box {
+            background: #f1f5f9;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-top: 8px;
+            font-size: 0.83rem;
+            color: #334155;
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Spots Grid */
+        .spot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .spot-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .spot-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .spot-desc {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* Checkbox List */
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 14px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .checklist-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .checklist-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .info-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .info-desc {
+            font-size: 0.85rem;
+            color: #1e3a8a;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <span class="badge-trip">BANGKOK TRIP 2026</span>
+        <h1>タイ遠征・しおり 🇹🇭</h1>
+        <p>エビ釣り × 島ツーリング × ボルダリング 2泊3日</p>
+    </header>
+
+    <main class="container">
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab('itinerary', this)">📅 スケジュール</button>
+            <button class="tab-btn" onclick="switchTab('packing', this)">🎒 持ち物リスト</button>
+            <button class="tab-btn" onclick="switchTab('tips', this)">💡 旅のTips</button>
+        </nav>
+
+        <!-- Tab 1: Itinerary -->
+        <div id="tab-itinerary" class="tab-content active">
+
+            <!-- Day 1 -->
+            <section class="day-card">
+                <div class="day-header">
+                    <div class="day-title-wrap">
+                        <span class="day-tag">DAY 1</span>
+                        <h2 class="day-title">土曜日</h2>
+                    </div>
+                    <span class="day-theme">到着 ＆ エビ爆食いナイト 🦐</span>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">夕方</span>
+                        <h3 class="timeline-title">ドンムアン空港（DMK）到着</h3>
+                        <p class="timeline-desc">入国手続き後、タクシー等で市内滞在先へ移動。荷物を置いて身軽に！</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot highlight"></div>
+                        <span class="timeline-time">夜</span>
+                        <h3 class="timeline-title">エビ釣り堀へ直行！ 🦐🍺</h3>
+                        <p class="timeline-desc">ビール片手に巨大なテナガエビを釣りまくる！釣ったその場で炭火焼きにしてもらい、タイ料理と一緒に乾杯！</p>
+                        <div class="timeline-box">
+                            💡 釣れなくてもお店のエビを追加注文して焼いてもらえるので安心！
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 2 -->
+            <section class="day-card">
+                <div class="day-header">
+                    <div class="day-title-wrap">
+                        <span class="day-tag">DAY 2</span>
+                        <h2 class="day-title">日曜日</h2>
+                    </div>
+                    <span class="day-theme">シーチャン島バイクツーリング 🏍️💨</span>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">07:00</span>
+                        <h3 class="timeline-title">チャーター車で出発</h3>
+                        <p class="timeline-desc">滞在先の前からチャーター車に乗車。高速道路でシラチャのコ・ロイ桟橋へ（約1時間15分〜30分）。車内は爆睡でOK！</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">09:00</span>
+                        <h3 class="timeline-title">フェリー出航（約40分）</h3>
+                        <p class="timeline-desc">シラチャ・コ・ロイ桟橋から大型フェリーに乗船（片道50B）。海風を浴びながらシーチャン島へ。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot highlight"></div>
+                        <span class="timeline-time">09:45〜15:00</span>
+                        <h3 class="timeline-title">シーチャン島到着 ➜ レンタルバイクで島内疾走！</h3>
+                        <p class="timeline-desc">港前でスクーターを即レンタル（1日約250〜300B）。信号も渋滞もない島を走り回る！</p>
+                        
+                        <div class="spot-grid">
+                            <div class="spot-card">
+                                <div class="spot-title">🌊 アッサダン橋 (Asadang Bridge)</div>
+                                <div class="spot-desc">海に向かって伸びる真っ白な木造桟橋。風が抜けて最高に気持ちいい絶景スポット。</div>
+                            </div>
+                            <div class="spot-card">
+                                <div class="spot-title">⛰️ チョン・カオ・カート (Chong Khao Khat)</div>
+                                <div class="spot-desc">断崖絶壁の岬。荒々しい海と岩肌を望む海沿いワインディングロード。</div>
+                            </div>
+                            <div class="spot-card">
+                                <div class="spot-title">🏖️ タムパン・ビーチ (Tham Phang Beach)</div>
+                                <div class="spot-desc">パラソルの下で波音を聞きながら、シーフード（イカ焼き・ソムタム等）と冷たいビールでランチ！</div>
+                            </div>
+                            <div class="spot-card">
+                                <div class="spot-title">🛕 チャオポー・カオ・ヤイ</div>
+                                <div class="spot-desc">崖の上の中国寺院。リフトで登り、島と海を一望できる展望台。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">15:00 or 16:00</span>
+                        <h3 class="timeline-title">フェリーでシラチャへ ➜ チャーター車でバンコクへ</h3>
+                        <p class="timeline-desc">桟橋で待機していたチャーター車に乗車し、バンコク市内へ直行。疲れた身体を車内で休められる！</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot green"></div>
+                        <span class="timeline-time">18:00〜</span>
+                        <h3 class="timeline-title">絶品ローカルタイ料理屋で乾杯！ 🍻</h3>
+                        <p class="timeline-desc">バンコク市内の美味いローカル店で、島ツーリングの打ち上げ晩酌！</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 3 -->
+            <section class="day-card">
+                <div class="day-header">
+                    <div class="day-title-wrap">
+                        <span class="day-tag">DAY 3</span>
+                        <h2 class="day-title">月曜日</h2>
+                    </div>
+                    <span class="day-theme">ボルダリング ＆ 全身リカバリー 🧗</span>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">09:40</span>
+                        <h3 class="timeline-title">滞在先を出発</h3>
+                        <p class="timeline-desc">MRTでクイーンシリキット駅（QSNCC）へ移動。駅直結の複合施設「The PARQ」へ。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot highlight"></div>
+                        <span class="timeline-time">10:00〜13:00</span>
+                        <h3 class="timeline-title">Stonegoat Climbing Gym (The PARQ支店) 🧗</h3>
+                        <p class="timeline-desc">朝イチ10時オープンと同時にイン！最新鋭・広大なエアコン完備のジムで3時間ガッツリ登る！終了後は施設内のシャワーでサッパリ。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">13:30</span>
+                        <h3 class="timeline-title">名物プーパッポンカリー（カニカレー）ランチ 🦀</h3>
+                        <p class="timeline-desc">ソンブーン・シーフード等で、ふわふわ卵と濃厚ガニのカレーを白米にかきこむ！</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot green"></div>
+                        <span class="timeline-time">15:00</span>
+                        <h3 class="timeline-title">本場タイ古式マッサージ（2時間コース） 💆</h3>
+                        <p class="timeline-desc">前日のバイクと午前のボルダリングでパンプした前腕・背中・脚を熟練の手技でじっくり伸ばして極楽回復。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-time">17:30〜20:00</span>
+                        <h3 class="timeline-title">滞在先でパッキング ＆ 最終シャワー</h3>
+                        <p class="timeline-desc">荷物を整理し、シャワーを浴びて快適な服装に着替える。軽めの夕食やお土産の最終確認。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot highlight"></div>
+                        <span class="timeline-time">20:30〜21:00</span>
+                        <h3 class="timeline-title">ドンムアン空港（DMK）へ移動</h3>
+                        <p class="timeline-desc">タクシーまたはGrabで空港へ移動。チェックイン・出国手続きを済ませ、免税店やお土産を見つつ搭乗口へ。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot green"></div>
+                        <span class="timeline-time">深夜</span>
+                        <h3 class="timeline-title">ドンムアン発 ✈️ 深夜便で日本へ帰国！</h3>
+                        <p class="timeline-desc">おつかれさまでした！機内で爆睡して朝起きたら日本到着！</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 2: Packing List -->
+        <div id="tab-packing" class="tab-content">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">🎒 持ち物チェックリスト</h2>
+                    <span class="day-theme">タップでチェック可能</span>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-title">🏍️ バイクレンタル時の注意</div>
+                    <div class="info-desc">日本の運転免許証＋国際運転免許証、またはパスポート（預けまたはコピー）を持参してください。ヘルメット着用必須です。</div>
+                </div>
+
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-1">
+                        <label class="checklist-text" for="check-1">
+                            <div class="checklist-title">パスポート（残存期間6ヶ月以上）</div>
+                            <div class="checklist-desc">空港およびホテル、バイクレンタル時に必要</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-2">
+                        <label class="checklist-text" for="check-2">
+                            <div class="checklist-title">国際運転免許証 ＆ 日本の免許証</div>
+                            <div class="checklist-desc">シーチャン島でのスクーター運転用</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-3">
+                        <label class="checklist-text" for="check-3">
+                            <div class="checklist-title">クライミングシューズ ＆ チョーク</div>
+                            <div class="checklist-desc">月曜Stonegoat用（ジムでもレンタル可）</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-4">
+                        <label class="checklist-text" for="check-4">
+                            <div class="checklist-title">運動着 ＆ 着替えTシャツ・タオル</div>
+                            <div class="checklist-desc">ボルダリング・ツーリング後のシャワー用</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-5">
+                        <label class="checklist-text" for="check-5">
+                            <div class="checklist-title">サングラス ＆ 日焼け止め</div>
+                            <div class="checklist-desc">島でのバイク走行時は日差しが強いため必須</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-6">
+                        <label class="checklist-text" for="check-6">
+                            <div class="checklist-title">羽織りもの（薄手の長袖・パーカー）</div>
+                            <div class="checklist-desc">空港・飛行機・モール内の冷房対策</div>
+                        </label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-7">
+                        <label class="checklist-text" for="check-7">
+                            <div class="checklist-title">モバイルバッテリー ＆ 充電ケーブル</div>
+                            <div class="checklist-desc">写真撮影やマップ利用でバッテリーを消費するため</div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 3: Tips -->
+        <div id="tab-tips" class="tab-content">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">💡 旅のTips ＆ お役立ち情報</h2>
+                </div>
+
+                <div class="spot-grid">
+                    <div class="spot-card">
+                        <div class="spot-title">🔌 電源・コンセント</div>
+                        <div class="spot-desc">タイのコンセントは日本のAタイププラグがそのまま刺さる形状（複合型）がほとんど。電圧は220Vなのでスマホ・PC充電器（100-240V対応）なら変圧器不要です。</div>
+                    </div>
+
+                    <div class="spot-card">
+                        <div class="spot-title">💵 両替・支払い</div>
+                        <div class="spot-desc">屋台や島でのバイクレンタル、マッサージ等は現金（タイバーツ）が中心。コンビニや大型商業施設はクレジットカードが使えます。空港または市内の両替所（SuperRich等）で両替がおすすめ。</div>
+                    </div>
+
+                    <div class="spot-card">
+                        <div class="spot-title">🌡️ 11月の気候</div>
+                        <div class="spot-desc">雨季が明けて乾季に入るベストシーズン！日中は30℃前後で晴天が多く、夜や早朝は比較的過ごしやすいです。屋内や飛行機内は冷房がかなり強いため羽織りものが重宝します。</div>
+                    </div>
+
+                    <div class="spot-card">
+                        <div class="spot-title">🚗 配車アプリ（Grab / Bolt）</div>
+                        <div class="spot-desc">タクシー移動時は「Grab」または「Bolt」アプリが超便利。行き先の指定や事前決済ができるのでぼったくりの心配がありません。日本で事前にインストール＆クレカ登録推奨。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Have a great trip in Bangkok! 🇹🇭✨</p>
+        </footer>
+    </main>
+
+    <script>
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('tab-' + tabId).classList.add('active');
+            btn.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
