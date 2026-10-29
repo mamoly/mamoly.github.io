@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <meta property="og:title" content="タイ遠征・旅のしおり 🇹🇭 (11/14〜11/16)">
-    <meta property="og:description" content="エビ釣り × シーチャン島バイク × ボルダリング 2泊3日スケジュール＆持ち物チェックリスト">
+    <meta property="og:description" content="エビ釣り × シーチャン島バイク × ボルダリング 2泊3日スケジュール＆持ち物リスト">
     <meta property="og:type" content="website">
     <title>Bangkok Trip Itinerary 🇹🇭 (Nov 14-16, 2026)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
             --primary-light: #e0f2fe;
             --accent: #f59e0b;
             --accent-green: #10b981;
+            --danger: #ef4444;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #0f172a;
@@ -315,6 +316,10 @@
             padding-left: 4px;
         }
 
+        .checklist-group-title.danger {
+            color: var(--danger);
+        }
+
         .checklist {
             list-style: none;
         }
@@ -385,6 +390,17 @@
             margin-left: 6px;
         }
 
+        .badge-opt {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+        }
+
         .checklist-reset-btn {
             border: 1px solid var(--border);
             background: white;
@@ -400,6 +416,46 @@
         .checklist-reset-btn:hover {
             background: #f1f5f9;
             color: var(--text-main);
+        }
+
+        /* Not Needed List */
+        .not-needed-box {
+            background: #fef2f2;
+            border: 1.5px dashed #fca5a5;
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 8px;
+        }
+
+        .not-needed-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #991b1b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .not-needed-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #7f1d1d;
+            line-height: 1.6;
+        }
+
+        .not-needed-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 4px;
+        }
+
+        .not-needed-list li::before {
+            content: '✕';
+            position: absolute;
+            left: 2px;
+            font-weight: 800;
+            color: #dc2626;
         }
 
         /* Info Card */
@@ -461,7 +517,7 @@
         <!-- Navigation Tabs -->
         <nav class="tabs">
             <button class="tab-btn active" onclick="switchTab('itinerary', this)">📅 行程表</button>
-            <button class="tab-btn" onclick="switchTab('packing', this)">🎒 持ち物チェック</button>
+            <button class="tab-btn" onclick="switchTab('packing', this)">🎒 持ち物リスト</button>
             <button class="tab-btn" onclick="switchTab('tips', this)">💡 旅のTips</button>
         </nav>
 
@@ -483,7 +539,7 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-time">夕方</span>
                         <h3 class="timeline-title">ドンムアン空港（DMK）到着</h3>
-                        <p class="timeline-desc">入国審査・荷物受け取り後、タクシーまたはGrabで市内滞在先へ移動。荷物を置いて身軽に準備！</p>
+                        <p class="timeline-desc">入国審査後、預け荷物待ちゼロで即合流！市内滞在先へ移動して身軽に準備。</p>
                     </div>
 
                     <div class="timeline-item">
@@ -492,7 +548,7 @@
                         <h3 class="timeline-title">エビ釣り堀へ直行！ 🦐🍺</h3>
                         <p class="timeline-desc">ビールを片手に巨大なテナガエビを釣りまくる！釣ったエビはその場で炭火焼きにしてもらい、スパイシーなタイ料理と一緒に乾杯！</p>
                         <div class="timeline-box">
-                            💡 釣果に関わらずお店のエビを追加して豪快に焼いてもらえるので安心！水辺なので虫除けスプレー持参が吉。
+                            💡 釣果に関わらずお店のエビを追加して豪快に焼いてもらえるので安心！
                         </div>
                     </div>
                 </div>
@@ -513,21 +569,21 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-time">07:00</span>
                         <h3 class="timeline-title">チャーター車で出発</h3>
-                        <p class="timeline-desc">滞在先の前から終日貸切のチャーター車に乗車。高速道路でシラチャのコ・ロイ桟橋へ（約1時間15分〜30分）。移動中は車内でゆっくり睡眠！</p>
+                        <p class="timeline-desc">滞在先の前から終日貸切のチャーター車に乗車。高速道路でシラチャのコ・ロイ桟橋へ（約1時間15分〜30分）。車内は爆睡でOK！</p>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <span class="timeline-time">09:00</span>
                         <h3 class="timeline-title">大型フェリー出航（約40分）</h3>
-                        <p class="timeline-desc">シラチャ・コ・ロイ桟橋から大型フェリーに乗船（片道50〜60B・現金）。心地よい海風を浴びながらシーチャン島へ。</p>
+                        <p class="timeline-desc">シラチャ・コ・ロイ桟橋から大型フェリーに乗船（片道50〜60B）。心地よい海風を浴びながらシーチャン島へ。</p>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-dot highlight"></div>
                         <span class="timeline-time">09:45〜15:00</span>
                         <h3 class="timeline-title">シーチャン島到着 ➜ レンタルバイクで島内疾走！</h3>
-                        <p class="timeline-desc">港前のショップでスクーターを即レンタル（1日約250〜300B）。信号も渋滞もない島の海沿いロードをアクセル全開でツーリング！（※二輪免許がない場合は名物三輪トゥクトゥク貸切も可能）</p>
+                        <p class="timeline-desc">港前のショップでスクーターを即レンタル（1日約250〜300B）。信号も渋滞もない島の海沿いロードをアクセル全開でツーリング！（※二輪免許がない場合は三輪トゥクトゥク貸切も可能）</p>
                         
                         <div class="spot-grid">
                             <div class="spot-card">
@@ -611,14 +667,14 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-time">17:30〜20:00</span>
                         <h3 class="timeline-title">滞在先でパッキング ＆ 最終シャワー</h3>
-                        <p class="timeline-desc">荷物をパッキングし、シャワーを浴びて機内用の快適な服装に着替える。軽めの夕食やお土産の最終確認。</p>
+                        <p class="timeline-desc">身軽な荷物をサッとまとめ、シャワーを浴びて機内用の快適な服装に着替える。軽めの夕食やお土産の最終確認。</p>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-dot highlight"></div>
                         <span class="timeline-time">20:30〜21:00</span>
                         <h3 class="timeline-title">ドンムアン空港（DMK）へ移動</h3>
-                        <p class="timeline-desc">タクシーまたはGrabで空港へ移動。チェックイン・出国手続きを済ませ、免税店やお土産を見つつ搭乗口へ。</p>
+                        <p class="timeline-desc">タクシーまたはGrabで空港へ移動。荷物預けがないのでチェックイン＆出国審査も爆速通過！</p>
                     </div>
 
                     <div class="timeline-item">
@@ -642,17 +698,17 @@
                     </div>
                 </div>
 
-                <div class="info-card alert">
-                    <div class="info-title">⚠️ 入国 ＆ バイクレンタルの最重要確認</div>
+                <div class="info-card">
+                    <div class="info-title">⚡ 荷物は最小限！預入手荷物はするな！</div>
                     <div class="info-desc">
-                        ① <strong>TDAC（タイ電子到着カード・無料）</strong>: 到着72時間前（11/11以降）にオンライン登録が必須です。<br>
-                        ② <strong>バイク運転</strong>: 島のスクーターは110〜125ccです。「日本の免許証＋国際運転免許証（二輪A欄スタンプ付）」が必要です（※四輪普通免許のみでA欄なしの場合は無免許扱いとなり保険適用外になるため注意）。原本預け回避用の「パスポート顔写真ページの紙コピー」も持参してください。
+                        スーツケース等の<strong>預入れ手荷物は一切禁止！</strong>リュック1つの機内持ち込みだけで身軽に来ること。<br>
+                        空港での荷物待ち時間ゼロで即合流＆即移動できます。
                     </div>
                 </div>
 
-                <!-- Group 1: 貴重品・書類 -->
+                <!-- Group 1: 必需品（絶対持ってくるもの） -->
                 <div class="checklist-group">
-                    <div class="checklist-group-title">📄 必需品・書類</div>
+                    <div class="checklist-group-title">🔥 絶対持ってくるもの（MUST）</div>
                     <ul class="checklist">
                         <li class="checklist-item">
                             <input type="checkbox" id="check-1">
@@ -669,152 +725,95 @@
                             </label>
                         </li>
                         <li class="checklist-item">
+                            <input type="checkbox" id="check-sunglasses">
+                            <label class="checklist-text" for="check-sunglasses">
+                                <div class="checklist-title">サングラス 🕶️<span class="badge-req">必須</span></div>
+                                <div class="checklist-desc">島でのバイク運転・日差し対策に必須！必ず持ってきて</div>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
                             <input type="checkbox" id="check-2">
                             <label class="checklist-text" for="check-2">
                                 <div class="checklist-title">国際運転免許証 ＆ 日本の免許証<span class="badge-req">バイク運転時</span></div>
-                                <div class="checklist-desc">二輪A欄スタンプ付き（警察署や免許センターで即日〜数日で発行可能）</div>
+                                <div class="checklist-desc">二輪A欄スタンプ付き（スクーター運転用）</div>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="check-passport-copy">
                             <label class="checklist-text" for="check-passport-copy">
-                                <div class="checklist-title">パスポート顔写真ページの紙コピー（1〜2枚）</div>
-                                <div class="checklist-desc">島でのバイクレンタル時の「パスポート原本預け」を回避するために必須級</div>
+                                <div class="checklist-title">パスポート顔写真ページの紙コピー（1枚）</div>
+                                <div class="checklist-desc">島でのバイクレンタル時の「パスポート原本預け」を回避するために持参推奨</div>
                             </label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="check-3">
-                            <label class="checklist-text" for="check-3">
-                                <div class="checklist-title">クレジットカード / デビットカード</div>
-                                <div class="checklist-desc">VISA / Mastercard推奨。海外キャッシング対応だと両替不要で便利</div>
+                            <input type="checkbox" id="check-climb">
+                            <label class="checklist-text" for="check-climb">
+                                <div class="checklist-title">クライミングシューズ ＆ チョーク</div>
+                                <div class="checklist-desc">マイシューズがあるなら持参（※ジムでレンタルも可能）</div>
                             </label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="check-4">
-                            <label class="checklist-text" for="check-4">
-                                <div class="checklist-title">日本円現金（3〜5万円程度）</div>
-                                <div class="checklist-desc">万が一の予備および現地での両替用</div>
+                            <input type="checkbox" id="check-clothes-active">
+                            <label class="checklist-text" for="check-clothes-active">
+                                <div class="checklist-title">動きやすい運動着（ハーフパンツ等）</div>
+                                <div class="checklist-desc">月曜ボルダリング＆ツーリング用</div>
                             </label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="check-5">
-                            <label class="checklist-text" for="check-5">
-                                <div class="checklist-title">海外旅行保険の控え</div>
-                                <div class="checklist-desc">クレカ付帯保険の適用条件確認、または掛け捨て保険加入</div>
+                            <input type="checkbox" id="check-sneaker">
+                            <label class="checklist-text" for="check-sneaker">
+                                <div class="checklist-title">履き慣れたスニーカー</div>
+                                <div class="checklist-desc">日本から履いてくる靴でOK（バイク運転の安全用）</div>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="check-card">
+                            <label class="checklist-text" for="check-card">
+                                <div class="checklist-title">クレジットカード ＆ 日本円の予備（少し）</div>
+                                <div class="checklist-desc">財布に入れておく用。両替は現地でやるので不要！</div>
                             </label>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Group 2: アクティビティ装備 -->
+                <!-- Group 2: 持てるなら持ってきて -->
                 <div class="checklist-group">
-                    <div class="checklist-group-title">🧗 ボルダリング＆ツーリング装備</div>
+                    <div class="checklist-group-title">🎒 持てるなら持ってきてもいいもの（OPTIONAL）</div>
                     <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-6">
-                            <label class="checklist-text" for="check-6">
-                                <div class="checklist-title">クライミングシューズ ＆ チョーク</div>
-                                <div class="checklist-desc">月曜Stonegoat用（※ジムでもレンタル可能ですがマイシューズ持参推奨）</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-climb-tools">
-                            <label class="checklist-text" for="check-climb-tools">
-                                <div class="checklist-title">靴下・爪切り・指皮用テーピング</div>
-                                <div class="checklist-desc">3時間登るための事前爪切り＆靴下（レンタルシューズ時必須）</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-7">
-                            <label class="checklist-text" for="check-7">
-                                <div class="checklist-title">運動着・動きやすいハーフパンツ</div>
-                                <div class="checklist-desc">ボルダリングおよびバイク運転用</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-8">
-                            <label class="checklist-text" for="check-8">
-                                <div class="checklist-title">着替え用Tシャツ（3〜4枚以上）</div>
-                                <div class="checklist-desc">バイクやクライミング後に汗を流して着替える用（多めが吉）</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-ziplock">
-                            <label class="checklist-text" for="check-ziplock">
-                                <div class="checklist-title">ジップロック / 防水袋（2〜3枚）</div>
-                                <div class="checklist-desc">月曜昼に汗をかいた運動着やタオルを密閉パッキングして帰国する用</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-9">
-                            <label class="checklist-text" for="check-9">
-                                <div class="checklist-title">速乾タオル / 汗拭きタオル</div>
-                                <div class="checklist-desc">ジムのシャワー後や海沿いで活躍</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-10">
-                            <label class="checklist-text" for="check-10">
-                                <div class="checklist-title">サングラス ＆ 日焼け止め</div>
-                                <div class="checklist-desc">島でのバイク運転時は直射日光と反射光が強いため必須</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-11">
-                            <label class="checklist-text" for="check-11">
-                                <div class="checklist-title">スニーカー（履き慣れた靴）</div>
-                                <div class="checklist-desc">バイク運転時は安全のためかかとが固定できるスニーカー推奨</div>
-                            </label>
-                        </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="check-sandal">
                             <label class="checklist-text" for="check-sandal">
-                                <div class="checklist-title">サンダル（ビーチサンダル / クロックス）</div>
-                                <div class="checklist-desc">エビ釣り堀、ビーチ、帰国前の空港移動リラックス時に重宝</div>
+                                <div class="checklist-title">サンダル（ビーサン / クロックス）<span class="badge-opt">余裕があれば</span></div>
+                                <div class="checklist-desc">荷物に余裕があって持てるなら持ってきてもOK（ビーチや移動時に楽）</div>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="check-hoodie">
+                            <label class="checklist-text" for="check-hoodie">
+                                <div class="checklist-title">薄手の羽織りもの（長袖シャツ・パーカー）<span class="badge-opt">機内用</span></div>
+                                <div class="checklist-desc">飛行機内や空港の冷房が寒い時用（腰に巻いてくる程度でOK）</div>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="check-special-power">
+                            <label class="checklist-text" for="check-special-power">
+                                <div class="checklist-title">特別な電源・専用コード<span class="badge-opt">必要なら</span></div>
+                                <div class="checklist-desc">特別な機器でこだわりがあれば。普通の充電設備は現地にあるので不要</div>
                             </label>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Group 3: 衣類・ガジェット・薬 -->
-                <div class="checklist-group">
-                    <div class="checklist-group-title">📱 ガジェット ＆ 便利グッズ・常備薬</div>
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-12">
-                            <label class="checklist-text" for="check-12">
-                                <div class="checklist-title">モバイルバッテリー ＆ 充電ケーブル</div>
-                                <div class="checklist-desc">写真撮影やナビ利用で消費大（※手荷物として機内持ち込み必須・容量表記要）</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-13">
-                            <label class="checklist-text" for="check-13">
-                                <div class="checklist-title">スマホ用首掛けストラップ</div>
-                                <div class="checklist-desc">フェリー上やバイク停車時の落下防止に超便利</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-14">
-                            <label class="checklist-text" for="check-14">
-                                <div class="checklist-title">薄手の羽織りもの（長袖シャツ・パーカー）</div>
-                                <div class="checklist-desc">飛行機・空港・ショッピングモール内の冷房対策に必須</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-15">
-                            <label class="checklist-text" for="check-15">
-                                <div class="checklist-title">常備薬（胃腸薬・正露丸・頭痛薬・酔い止め）</div>
-                                <div class="checklist-desc">タイ料理や辛いもの、フェリー対策（酔い止め）にあると安心</div>
-                            </label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="check-16">
-                            <label class="checklist-text" for="check-16">
-                                <div class="checklist-title">ウェットティッシュ ＆ ポケットティッシュ</div>
-                                <div class="checklist-desc">エビ釣り堀や屋台・ローカル食堂での手拭きに大活躍</div>
-                            </label>
-                        </li>
+                <!-- Group 3: 不要なもの（持ってくるな！） -->
+                <div class="not-needed-box">
+                    <div class="not-needed-title">🚫 持ってこなくていいもの（現地にある！軽くしろ！）</div>
+                    <ul class="not-needed-list">
+                        <li><strong>預入手荷物</strong>: スーツケース預けは禁止。リュック1個で身軽に来ること</li>
+                        <li><strong>現地通貨（バーツ）・両替</strong>: 両替や現地支払いはすべてこちらでやるので準備不要</li>
+                        <li><strong>モバイルバッテリー</strong>: 持ってこなくてOK（不要）</li>
+                        <li><strong>日焼け止め</strong>: いらない</li>
+                        <li><strong>大量の着替え ＆ ジップロック</strong>: いらない（現地対応可能）</li>
+                        <li><strong>タオル</strong>: いらない（現地にある）</li>
                     </ul>
                 </div>
             </div>
@@ -829,33 +828,33 @@
 
                 <div class="spot-grid">
                     <div class="spot-card">
-                        <div class="spot-title">✈️ TDAC（電子到着カード）登録</div>
-                        <div class="spot-desc">タイ入国にはオンライン事前申請（到着72時間前＝11/11以降受付）が必須です。公式サイト（tdac.immigration.go.th）から無料で即時取得可能。※検索広告にある有料代行サイトにご注意ください。</div>
+                        <div class="spot-title">🧳 荷物は預けるな！機内持ち込みだけで軽く！</div>
+                        <div class="spot-desc">スーツケースの預け入れは禁止。機内持ち込みリュック1つで身軽に来てくれ。ドンムアン着後もターンテーブルで待たずにすぐ合流してエビ釣りに行ける！</div>
                     </div>
 
                     <div class="spot-card">
-                        <div class="spot-title">🔌 電源・コンセント</div>
-                        <div class="spot-desc">タイのコンセントは日本のAタイププラグがそのまま刺さる複合型コンセントが主流です。電圧は220Vですが、スマホやモバイルバッテリーの充電器（100-240V対応）なら変圧器なしでそのまま使えます。</div>
+                        <div class="spot-title">💵 両替は不要（全部現地でやる）</div>
+                        <div class="spot-desc">空港や街中でのタイバーツ両替は全部こっちでやるから準備不要。日本円の普段の財布だけ持ってくればOK。</div>
                     </div>
 
                     <div class="spot-card">
-                        <div class="spot-title">💵 両替・現金支払い</div>
-                        <div class="spot-desc">エビ釣り堀、島でのバイクレンタル、フェリー代、マッサージ店、ローカル屋台は現金（タイバーツ）が中心です。大型商業施設やコンビニはクレジットカードが利用可能。空港または市内の両替所（SuperRich等）で両替できます。</div>
+                        <div class="spot-title">🔌 電源・充電</div>
+                        <div class="spot-desc">タイのコンセントは日本のプラグがそのまま挿さるし、充電環境は現地にあるから普通のスマホ充電器等は持ってこなくて大丈夫。何か特別な機器で専用コードが必要ならそれだけ持ってきて。</div>
+                    </div>
+
+                    <div class="spot-card">
+                        <div class="spot-title">🔋 モバイルバッテリー・日焼け止め・タオル等</div>
+                        <div class="spot-desc">モバイルバッテリーは持参不要。日焼け止めもいらん。タオルや着替え用ジップロック等も現地にあるから持参不要。とにかく荷物を軽くしてきてくれ！</div>
+                    </div>
+
+                    <div class="spot-card">
+                        <div class="spot-title">✈️ TDAC（電子到着カード）だけは事前登録必須</div>
+                        <div class="spot-desc">タイ入国にはオンライン事前申請（到着72時間前＝11/11以降受付）が義務化されています。公式サイト（tdac.immigration.go.th）から無料で即時取得できるので、これだけはスマホで済ませてQRをスクショしておいて。</div>
                     </div>
 
                     <div class="spot-card">
                         <div class="spot-title">🌡️ 11月中旬の気候</div>
-                        <div class="spot-desc">雨季が明けて乾季に入る年間で一番快適なベストシーズン！日中は30℃前後で青空が広がり、朝晩は比較的過ごしやすいです。ただし室内や機内の冷房は非常に強いため、羽織りものを1枚携帯しておくと快適です。</div>
-                    </div>
-
-                    <div class="spot-card">
-                        <div class="spot-title">🚗 配車アプリ（Grab / Bolt）</div>
-                        <div class="spot-desc">タクシー移動時は「Grab」または「Bolt」アプリが超便利。行き先の指定や事前決済ができるのでぼったくりの心配がありません。日本で事前にアプリをインストール＆クレジットカード登録を済ませておくのがおすすめです。</div>
-                    </div>
-
-                    <div class="spot-card">
-                        <div class="spot-title">🧳 手荷物・バッテリー規定の注意</div>
-                        <div class="spot-desc">モバイルバッテリーは受託手荷物（預け荷物）厳禁で、必ず機内持ち込み手荷物に入れてください（容量表示があるもの）。また、機内持ち込みの場合、100ml（g）を超える液体・ジェル・スプレー（日焼け止め等）は保安検査で没収されます。</div>
+                        <div class="spot-desc">雨季が明けて乾季に入る年間で一番快適なベストシーズン！日中は30℃前後で晴天。飛行機内だけ冷えることがあるので、羽織るものが1枚あると快適。</div>
                     </div>
                 </div>
             </div>
